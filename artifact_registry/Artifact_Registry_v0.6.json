@@ -1,0 +1,42 @@
+{
+  "protocol_version": "0.6.0",
+  "constants_version": "0.6.0",
+  "generated_by": "scripts/generate_artifact_registry.py",
+  "psl_snapshot": {
+    "filename": "PSL-2026-01-01.dat",
+    "sha256": "edee63489085821c1744bbc9225bb1ff9edd34f8451f1379273e124ebf5083cf"
+  },
+  "spec_documents": {
+    "Protocols/DKP-PTL-REG Implementation Roadmap.md": "a6584c0581ec26b17ef4233b1523f3748568898b7eed2b61fc65c7192087f671",
+    "Protocols/DKP-PTL-REG-001.md": "72b8737839afe781fc930d4db87741f5218eaafa70f18090f1a7794c946c958f",
+    "Protocols/DKP-PTL-REG-CONSTANTS-001_.md": "22467ecb7520ffd8ab0b607fb24fd7bc0f0c3bdff5a1d78f7223863a22ea1430",
+    "Protocols/DKP-PTL-REG-DATA-001.md": "453cb94e162b010ba3d41f0d733928462d7ecc7d1ba01b2a677622c00c5df0ac",
+    "Protocols/DKP-PTL-REG-GOV-001.md": "5ee22c84dd45002a918f98cc3e262097cdab49517cf9b61011bc092d7d1a6684",
+    "Protocols/DKP-PTL-REG-REFERENCE-001.md": "a48ee9d0890342d6b782810c20456f3f83eb33bf5e4a81b91ebaf014f9bb15c8",
+    "Protocols/DKP-PTL-REG-THREAT-001.md": "f83360f10fbee43157cd9f6035bf1c7fa925b93732c86f921e8c1c33227f40e9"
+  },
+  "source_files": {
+    "engine/src/__init__.py": "575e6aa01702bccca199c1c27bac1d28d13dc7997663505eb9d9e65ffa9e62db",
+    "engine/src/__main__.py": "eedc45189123e9044f85288035efb9dba12052124b88cd378e8cdcc7cdac3660",
+    "engine/src/cli.py": "c48d239988cbdf7d59e86186b2170bccd9ed242e42482125cf868b7ad9dcccc0",
+    "engine/src/constants.py": "36e72af21941322909832d62055410a16e3930aef4ffebca33a47466e46777a7",
+    "engine/src/data_pipeline.py": "525b8876f49d5a4993ad6ee7639f392adf206f613b49e40208f9486f709024f0",
+    "engine/src/json_canonical.py": "52868d60f5f8b5c38b3c35c9beadac34864f0ef9fdd5080b582b1f9cf1ae8ea3",
+    "engine/src/reference_boundary.py": "c51adfeae84f978068f58f1d6378a860fe5f0af12353e8a5b93fba0131c31c91",
+    "engine/src/threat_status.py": "61eb11cb6bb37bf4aaec1cbc022a24fe50b1a71f2d8bf5470cd0815f3ad5b691"
+  },
+  "test_vectors": {
+    "engine/tests/test_vectors/burst_attack_expected.json": "f283b14c765596e8a9af4615f0aa5b0459638c6b32e26fdf48f01b42f106edfb",
+    "engine/tests/test_vectors/burst_attack_input.json": "8c2e7a72a472939f7dec2423285032b79bdc3d095387a430b647bcc594a553d3",
+    "engine/tests/test_vectors/cluster_injection_expected.json": "1f04e89192b7438f56a731d63648169ab88554e0d4dac224544ebe3f1e7c3db4",
+    "engine/tests/test_vectors/cluster_injection_input.json": "6d539d852afb05f1ae1b84a0846a589b98308539da850b09581d51940a89a335",
+    "engine/tests/test_vectors/cold_start_expected.json": "cb5d2cfc2b5fc6ad153b0a519e8bea74c89318f25cfde80def6ee31690892be8",
+    "engine/tests/test_vectors/cold_start_input.json": "e63bcee5a1a8a4c6d97afc78c924ec6cf9df0bd66605416f90ffc4244e99aeb3",
+    "engine/tests/test_vectors/domain_dominance_expected.json": "ca929b12ec8976f0ed06223576bae8ebfee133554c4720d9fd16838dd5fe4c98",
+    "engine/tests/test_vectors/domain_dominance_input.json": "0b5c7de0c6a25a69e3f97b5d3db8f041bdadd82ce3df9eff888d8c4baf89eeb5",
+    "engine/tests/test_vectors/uniform_market_expected.json": "eceb3ff5a694ded1bd77fedec7c26b8208c2e270258ab4d2896583d34d76babd",
+    "engine/tests/test_vectors/uniform_market_input.json": "c0b13e91c6dca8b16dd43a842470fcc9ba4be55ce390600b6806676d086ca548",
+    "engine/tests/test_vectors/zero_mad_expected.json": "044cf4ad057d3ef36df77591f94b55fc44719596d76e4442b37ac3b811b653f9",
+    "engine/tests/test_vectors/zero_mad_input.json": "b50db9737443ae823cf7f35ae332fb9d2894d0c68854d603efcdbb660a55ec6e"
+  }
+}

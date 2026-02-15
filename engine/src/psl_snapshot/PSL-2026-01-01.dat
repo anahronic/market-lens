@@ -1,0 +1,2260 @@
+// DKP-PTL-REG PSL Snapshot: PSL-2026-01-01
+// Pinned version for deterministic eTLD+1 extraction.
+// Based on publicsuffix.org — subset for reference engine.
+//
+// This file MUST NOT be modified without version increment.
+// SHA256 of this file is recorded in Artifact_Registry_v0.6.json.
+
+// ===BEGIN ICANN DOMAINS===
+
+// ac
+ac
+com.ac
+edu.ac
+gov.ac
+net.ac
+mil.ac
+org.ac
+
+// ad
+ad
+nom.ad
+
+// ae
+ae
+co.ae
+net.ae
+org.ae
+sch.ae
+ac.ae
+gov.ae
+mil.ae
+
+// af
+af
+gov.af
+com.af
+org.af
+net.af
+edu.af
+
+// ag
+ag
+com.ag
+org.ag
+net.ag
+co.ag
+nom.ag
+
+// ai
+ai
+off.ai
+com.ai
+net.ai
+org.ai
+
+// al
+al
+com.al
+edu.al
+gov.al
+mil.al
+net.al
+org.al
+
+// am
+am
+co.am
+com.am
+commune.am
+net.am
+org.am
+
+// ao
+ao
+ed.ao
+gv.ao
+og.ao
+co.ao
+pb.ao
+it.ao
+
+// ar
+ar
+com.ar
+edu.ar
+gob.ar
+gov.ar
+int.ar
+mil.ar
+musica.ar
+net.ar
+org.ar
+tur.ar
+
+// at
+at
+ac.at
+co.at
+gv.at
+or.at
+
+// au
+au
+com.au
+net.au
+org.au
+edu.au
+gov.au
+asn.au
+id.au
+
+// aw
+aw
+com.aw
+
+// az
+az
+com.az
+net.az
+int.az
+gov.az
+org.az
+edu.az
+info.az
+pp.az
+mil.az
+name.az
+pro.az
+biz.az
+
+// ba
+ba
+com.ba
+edu.ba
+gov.ba
+mil.ba
+net.ba
+org.ba
+
+// bb
+bb
+biz.bb
+co.bb
+com.bb
+edu.bb
+gov.bb
+info.bb
+net.bb
+org.bb
+store.bb
+tv.bb
+
+// be
+be
+ac.be
+
+// bf
+bf
+gov.bf
+
+// bg
+bg
+a.bg
+b.bg
+c.bg
+d.bg
+e.bg
+f.bg
+g.bg
+h.bg
+i.bg
+j.bg
+k.bg
+l.bg
+m.bg
+n.bg
+o.bg
+p.bg
+q.bg
+r.bg
+s.bg
+t.bg
+u.bg
+v.bg
+w.bg
+x.bg
+y.bg
+z.bg
+0.bg
+1.bg
+2.bg
+3.bg
+4.bg
+5.bg
+6.bg
+7.bg
+8.bg
+9.bg
+
+// bh
+bh
+com.bh
+edu.bh
+net.bh
+org.bh
+gov.bh
+
+// bi
+bi
+co.bi
+com.bi
+edu.bi
+or.bi
+org.bi
+
+// biz
+biz
+
+// bj
+bj
+asso.bj
+barreau.bj
+gouv.bj
+
+// bn
+bn
+com.bn
+edu.bn
+gov.bn
+net.bn
+org.bn
+
+// bo
+bo
+com.bo
+edu.bo
+gob.bo
+int.bo
+org.bo
+net.bo
+mil.bo
+tv.bo
+web.bo
+academia.bo
+agro.bo
+arte.bo
+blog.bo
+bolivia.bo
+ciencia.bo
+cooperativa.bo
+democracia.bo
+deporte.bo
+ecologia.bo
+economia.bo
+empresa.bo
+indigena.bo
+industria.bo
+info.bo
+medicina.bo
+movimiento.bo
+musica.bo
+natural.bo
+nombre.bo
+noticias.bo
+patria.bo
+politica.bo
+profesional.bo
+plurinacional.bo
+pueblo.bo
+revista.bo
+salud.bo
+tecnologia.bo
+tksat.bo
+transporte.bo
+wiki.bo
+
+// br
+br
+com.br
+edu.br
+gov.br
+net.br
+org.br
+mil.br
+
+// bs
+bs
+com.bs
+net.bs
+org.bs
+edu.bs
+gov.bs
+
+// bt
+bt
+com.bt
+edu.bt
+gov.bt
+net.bt
+org.bt
+
+// by
+by
+gov.by
+mil.by
+com.by
+of.by
+
+// bz
+bz
+com.bz
+net.bz
+org.bz
+edu.bz
+gov.bz
+
+// ca
+ca
+ab.ca
+bc.ca
+mb.ca
+nb.ca
+nf.ca
+nl.ca
+ns.ca
+nt.ca
+nu.ca
+on.ca
+pe.ca
+qc.ca
+sk.ca
+yk.ca
+
+// cat
+cat
+
+// cc
+cc
+
+// cd
+cd
+gov.cd
+
+// cf
+cf
+
+// cg
+cg
+
+// ch
+ch
+
+// ci
+ci
+org.ci
+or.ci
+com.ci
+co.ci
+edu.ci
+ed.ci
+ac.ci
+net.ci
+go.ci
+asso.ci
+aeroport.ci
+int.ci
+presse.ci
+md.ci
+gouv.ci
+
+// cl
+cl
+co.cl
+gob.cl
+gov.cl
+mil.cl
+
+// cm
+cm
+co.cm
+com.cm
+gov.cm
+net.cm
+
+// cn
+cn
+ac.cn
+com.cn
+edu.cn
+gov.cn
+net.cn
+org.cn
+mil.cn
+
+// co
+co
+arts.co
+com.co
+edu.co
+firm.co
+gov.co
+info.co
+int.co
+mil.co
+net.co
+nom.co
+org.co
+rec.co
+web.co
+
+// com
+com
+
+// coop
+coop
+
+// cr
+cr
+ac.cr
+co.cr
+ed.cr
+fi.cr
+go.cr
+or.cr
+sa.cr
+
+// cu
+cu
+com.cu
+edu.cu
+org.cu
+net.cu
+gov.cu
+inf.cu
+
+// cv
+cv
+
+// cw
+cw
+com.cw
+edu.cw
+net.cw
+org.cw
+
+// cx
+cx
+gov.cx
+
+// cy
+cy
+ac.cy
+biz.cy
+com.cy
+ekloges.cy
+gov.cy
+ltd.cy
+name.cy
+net.cy
+org.cy
+parliament.cy
+press.cy
+pro.cy
+tm.cy
+
+// cz
+cz
+
+// de
+de
+
+// dj
+dj
+
+// dk
+dk
+
+// dm
+dm
+com.dm
+net.dm
+org.dm
+edu.dm
+gov.dm
+
+// do
+do
+art.do
+com.do
+edu.do
+gob.do
+gov.do
+mil.do
+net.do
+org.do
+sld.do
+web.do
+
+// dz
+dz
+com.dz
+org.dz
+net.dz
+gov.dz
+edu.dz
+asso.dz
+pol.dz
+art.dz
+
+// ec
+ec
+com.ec
+info.ec
+net.ec
+fin.ec
+k12.ec
+med.ec
+pro.ec
+org.ec
+edu.ec
+gov.ec
+gob.ec
+mil.ec
+
+// edu
+edu
+
+// ee
+ee
+edu.ee
+gov.ee
+riik.ee
+lib.ee
+med.ee
+com.ee
+pri.ee
+aip.ee
+org.ee
+fie.ee
+
+// eg
+eg
+com.eg
+edu.eg
+eun.eg
+gov.eg
+mil.eg
+name.eg
+net.eg
+org.eg
+sci.eg
+
+// es
+es
+com.es
+nom.es
+org.es
+gob.es
+edu.es
+
+// et
+et
+com.et
+gov.et
+org.et
+edu.et
+biz.et
+name.et
+info.et
+net.et
+
+// eu
+eu
+
+// fi
+fi
+
+// fj
+fj
+ac.fj
+biz.fj
+com.fj
+gov.fj
+info.fj
+mil.fj
+name.fj
+net.fj
+org.fj
+pro.fj
+
+// fm
+fm
+
+// fo
+fo
+
+// fr
+fr
+asso.fr
+com.fr
+gouv.fr
+nom.fr
+prd.fr
+tm.fr
+
+// ga
+ga
+
+// gd
+gd
+
+// ge
+ge
+com.ge
+edu.ge
+gov.ge
+org.ge
+mil.ge
+net.ge
+pvt.ge
+
+// gf
+gf
+
+// gg
+gg
+co.gg
+net.gg
+org.gg
+
+// gh
+gh
+com.gh
+edu.gh
+gov.gh
+org.gh
+mil.gh
+
+// gi
+gi
+com.gi
+ltd.gi
+gov.gi
+mod.gi
+edu.gi
+org.gi
+
+// gl
+gl
+co.gl
+com.gl
+edu.gl
+net.gl
+org.gl
+
+// gm
+gm
+
+// gov
+gov
+
+// gp
+gp
+com.gp
+net.gp
+mobi.gp
+edu.gp
+org.gp
+asso.gp
+
+// gq
+gq
+
+// gr
+gr
+com.gr
+edu.gr
+net.gr
+org.gr
+gov.gr
+
+// gs
+gs
+
+// gt
+gt
+com.gt
+edu.gt
+gob.gt
+ind.gt
+mil.gt
+net.gt
+org.gt
+
+// gy
+gy
+co.gy
+com.gy
+edu.gy
+gov.gy
+net.gy
+org.gy
+
+// hk
+hk
+com.hk
+edu.hk
+gov.hk
+idv.hk
+net.hk
+org.hk
+
+// hn
+hn
+com.hn
+edu.hn
+org.hn
+net.hn
+mil.hn
+gob.hn
+
+// hr
+hr
+iz.hr
+from.hr
+name.hr
+com.hr
+
+// ht
+ht
+com.ht
+shop.ht
+firm.ht
+info.ht
+adult.ht
+net.ht
+pro.ht
+org.ht
+med.ht
+art.ht
+coop.ht
+pol.ht
+asso.ht
+edu.ht
+rel.ht
+gouv.ht
+perso.ht
+
+// hu
+hu
+co.hu
+info.hu
+org.hu
+priv.hu
+sport.hu
+tm.hu
+2000.hu
+agrar.hu
+bolt.hu
+casino.hu
+city.hu
+erotica.hu
+erotika.hu
+film.hu
+forum.hu
+games.hu
+hotel.hu
+ingatlan.hu
+jogasz.hu
+konyvelo.hu
+lakas.hu
+media.hu
+news.hu
+reklam.hu
+sex.hu
+shop.hu
+suli.hu
+szex.hu
+tozsde.hu
+utazas.hu
+video.hu
+
+// id
+id
+ac.id
+biz.id
+co.id
+desa.id
+go.id
+mil.id
+my.id
+net.id
+or.id
+ponpes.id
+sch.id
+web.id
+
+// ie
+ie
+gov.ie
+
+// il
+il
+ac.il
+co.il
+gov.il
+idf.il
+k12.il
+muni.il
+net.il
+org.il
+
+// im
+im
+ac.im
+co.im
+com.im
+ltd.co.im
+net.im
+org.im
+plc.co.im
+tt.im
+tv.im
+
+// in
+in
+co.in
+firm.in
+net.in
+org.in
+gen.in
+ind.in
+nic.in
+ac.in
+edu.in
+res.in
+gov.in
+mil.in
+
+// info
+info
+
+// int
+int
+eu.int
+
+// io
+io
+com.io
+
+// iq
+iq
+gov.iq
+edu.iq
+mil.iq
+com.iq
+org.iq
+net.iq
+
+// ir
+ir
+ac.ir
+co.ir
+gov.ir
+id.ir
+net.ir
+org.ir
+sch.ir
+
+// is
+is
+net.is
+com.is
+edu.is
+gov.is
+org.is
+int.is
+
+// it
+it
+gov.it
+edu.it
+co.it
+
+// je
+je
+co.je
+net.je
+org.je
+
+// jm
+jm
+com.jm
+net.jm
+org.jm
+edu.jm
+gov.jm
+mil.jm
+
+// jo
+jo
+com.jo
+org.jo
+net.jo
+edu.jo
+sch.jo
+gov.jo
+mil.jo
+name.jo
+
+// jobs
+jobs
+
+// jp
+jp
+ac.jp
+ad.jp
+co.jp
+ed.jp
+go.jp
+gr.jp
+lg.jp
+ne.jp
+or.jp
+
+// ke
+ke
+ac.ke
+co.ke
+go.ke
+info.ke
+me.ke
+mobi.ke
+ne.ke
+or.ke
+sc.ke
+
+// kg
+kg
+org.kg
+net.kg
+com.kg
+edu.kg
+gov.kg
+mil.kg
+
+// kh
+kh
+edu.kh
+per.kh
+com.kh
+gov.kh
+mil.kh
+net.kh
+org.kh
+
+// ki
+ki
+edu.ki
+biz.ki
+net.ki
+org.ki
+gov.ki
+info.ki
+com.ki
+
+// km
+km
+org.km
+nom.km
+gov.km
+prd.km
+tm.km
+edu.km
+mil.km
+ass.km
+com.km
+coop.km
+asso.km
+presse.km
+medecin.km
+notaires.km
+pharmaciens.km
+veterinaire.km
+gouv.km
+
+// kn
+kn
+net.kn
+org.kn
+edu.kn
+gov.kn
+
+// kr
+kr
+ac.kr
+co.kr
+es.kr
+go.kr
+hs.kr
+kg.kr
+mil.kr
+ms.kr
+ne.kr
+or.kr
+pe.kr
+re.kr
+sc.kr
+
+// kw
+kw
+com.kw
+edu.kw
+emb.kw
+gov.kw
+ind.kw
+net.kw
+org.kw
+
+// ky
+ky
+edu.ky
+gov.ky
+com.ky
+org.ky
+net.ky
+
+// kz
+kz
+org.kz
+edu.kz
+net.kz
+gov.kz
+mil.kz
+com.kz
+
+// la
+la
+int.la
+net.la
+info.la
+edu.la
+gov.la
+per.la
+com.la
+org.la
+
+// lb
+lb
+com.lb
+edu.lb
+gov.lb
+net.lb
+org.lb
+
+// lc
+lc
+com.lc
+net.lc
+co.lc
+org.lc
+edu.lc
+gov.lc
+
+// li
+li
+
+// lk
+lk
+gov.lk
+sch.lk
+net.lk
+int.lk
+com.lk
+org.lk
+edu.lk
+ngo.lk
+soc.lk
+web.lk
+ltd.lk
+assn.lk
+grp.lk
+hotel.lk
+ac.lk
+
+// lr
+lr
+com.lr
+edu.lr
+gov.lr
+org.lr
+net.lr
+
+// ls
+ls
+ac.ls
+biz.ls
+co.ls
+edu.ls
+gov.ls
+info.ls
+net.ls
+org.ls
+sc.ls
+
+// lt
+lt
+gov.lt
+
+// lu
+lu
+
+// lv
+lv
+com.lv
+edu.lv
+gov.lv
+org.lv
+mil.lv
+id.lv
+net.lv
+asn.lv
+conf.lv
+
+// ly
+ly
+com.ly
+net.ly
+gov.ly
+plc.ly
+edu.ly
+sch.ly
+med.ly
+org.ly
+id.ly
+
+// ma
+ma
+co.ma
+net.ma
+gov.ma
+org.ma
+ac.ma
+press.ma
+
+// mc
+mc
+tm.mc
+asso.mc
+
+// md
+md
+
+// me
+me
+co.me
+net.me
+org.me
+edu.me
+ac.me
+gov.me
+its.me
+priv.me
+
+// mg
+mg
+org.mg
+nom.mg
+gov.mg
+prd.mg
+tm.mg
+edu.mg
+mil.mg
+com.mg
+co.mg
+
+// mil
+mil
+
+// mk
+mk
+com.mk
+org.mk
+net.mk
+edu.mk
+gov.mk
+inf.mk
+name.mk
+
+// ml
+ml
+com.ml
+edu.ml
+gouv.ml
+gov.ml
+net.ml
+org.ml
+presse.ml
+
+// mm
+mm
+com.mm
+net.mm
+org.mm
+edu.mm
+gov.mm
+
+// mn
+mn
+gov.mn
+edu.mn
+org.mn
+
+// mo
+mo
+com.mo
+net.mo
+org.mo
+edu.mo
+gov.mo
+
+// mobi
+mobi
+
+// mp
+mp
+
+// mr
+mr
+gov.mr
+
+// ms
+ms
+com.ms
+edu.ms
+gov.ms
+net.ms
+org.ms
+
+// mt
+mt
+com.mt
+edu.mt
+net.mt
+org.mt
+
+// mu
+mu
+com.mu
+net.mu
+org.mu
+gov.mu
+ac.mu
+co.mu
+or.mu
+
+// museum
+museum
+
+// mv
+mv
+aero.mv
+biz.mv
+com.mv
+coop.mv
+edu.mv
+gov.mv
+info.mv
+int.mv
+mil.mv
+museum.mv
+name.mv
+net.mv
+org.mv
+pro.mv
+
+// mw
+mw
+ac.mw
+biz.mw
+co.mw
+com.mw
+coop.mw
+edu.mw
+gov.mw
+int.mw
+museum.mw
+net.mw
+org.mw
+
+// mx
+mx
+com.mx
+org.mx
+gob.mx
+edu.mx
+net.mx
+
+// my
+my
+com.my
+net.my
+org.my
+gov.my
+edu.my
+mil.my
+name.my
+
+// mz
+mz
+ac.mz
+adv.mz
+co.mz
+edu.mz
+gov.mz
+mil.mz
+net.mz
+org.mz
+
+// na
+na
+info.na
+pro.na
+name.na
+school.na
+or.na
+dr.na
+us.na
+mx.na
+ca.na
+in.na
+cc.na
+tv.na
+ws.na
+mobi.na
+co.na
+com.na
+org.na
+
+// name
+name
+
+// nc
+nc
+asso.nc
+nom.nc
+
+// ne
+ne
+
+// net
+net
+
+// nf
+nf
+com.nf
+net.nf
+per.nf
+rec.nf
+web.nf
+arts.nf
+firm.nf
+info.nf
+other.nf
+store.nf
+
+// ng
+ng
+com.ng
+edu.ng
+gov.ng
+i.ng
+mil.ng
+mobi.ng
+name.ng
+net.ng
+org.ng
+sch.ng
+
+// ni
+ni
+ac.ni
+biz.ni
+co.ni
+com.ni
+edu.ni
+gob.ni
+in.ni
+info.ni
+int.ni
+mil.ni
+net.ni
+nom.ni
+org.ni
+web.ni
+
+// nl
+nl
+
+// no
+no
+fhs.no
+vgs.no
+fylkesbibl.no
+folkebibl.no
+museum.no
+idrett.no
+priv.no
+mil.no
+stat.no
+dep.no
+kommune.no
+herad.no
+
+// np
+np
+com.np
+edu.np
+gov.np
+org.np
+mil.np
+net.np
+
+// nr
+nr
+biz.nr
+info.nr
+gov.nr
+edu.nr
+org.nr
+net.nr
+com.nr
+
+// nu
+nu
+
+// nz
+nz
+ac.nz
+co.nz
+cri.nz
+geek.nz
+gen.nz
+govt.nz
+health.nz
+iwi.nz
+kiwi.nz
+maori.nz
+mil.nz
+net.nz
+org.nz
+parliament.nz
+school.nz
+
+// om
+om
+co.om
+com.om
+edu.om
+gov.om
+med.om
+museum.om
+net.om
+org.om
+pro.om
+
+// org
+org
+
+// pa
+pa
+ac.pa
+gob.pa
+com.pa
+org.pa
+sld.pa
+edu.pa
+net.pa
+ing.pa
+abo.pa
+med.pa
+nom.pa
+
+// pe
+pe
+edu.pe
+gob.pe
+nom.pe
+mil.pe
+org.pe
+com.pe
+net.pe
+
+// pf
+pf
+com.pf
+org.pf
+edu.pf
+
+// pg
+pg
+com.pg
+net.pg
+ac.pg
+gov.pg
+mil.pg
+org.pg
+
+// ph
+ph
+com.ph
+net.ph
+org.ph
+gov.ph
+edu.ph
+ngo.ph
+mil.ph
+i.ph
+
+// pk
+pk
+com.pk
+net.pk
+edu.pk
+org.pk
+fam.pk
+biz.pk
+web.pk
+gov.pk
+gob.pk
+gok.pk
+gon.pk
+gop.pk
+gos.pk
+info.pk
+
+// pl
+pl
+com.pl
+net.pl
+org.pl
+info.pl
+waw.pl
+
+// pm
+pm
+
+// pn
+pn
+gov.pn
+co.pn
+org.pn
+edu.pn
+net.pn
+
+// pr
+pr
+com.pr
+net.pr
+org.pr
+gov.pr
+edu.pr
+isla.pr
+pro.pr
+biz.pr
+info.pr
+name.pr
+
+// pro
+pro
+aaa.pro
+aca.pro
+acct.pro
+avocat.pro
+bar.pro
+cpa.pro
+eng.pro
+jur.pro
+law.pro
+med.pro
+recht.pro
+
+// ps
+ps
+edu.ps
+gov.ps
+sec.ps
+plo.ps
+com.ps
+org.ps
+net.ps
+
+// pt
+pt
+net.pt
+gov.pt
+org.pt
+edu.pt
+int.pt
+publ.pt
+com.pt
+nome.pt
+
+// pw
+pw
+co.pw
+ne.pw
+or.pw
+ed.pw
+go.pw
+belau.pw
+
+// py
+py
+com.py
+coop.py
+edu.py
+gov.py
+mil.py
+net.py
+org.py
+
+// qa
+qa
+com.qa
+edu.qa
+gov.qa
+mil.qa
+name.qa
+net.qa
+org.qa
+sch.qa
+
+// re
+re
+asso.re
+com.re
+nom.re
+
+// ro
+ro
+arts.ro
+com.ro
+firm.ro
+info.ro
+nom.ro
+nt.ro
+org.ro
+rec.ro
+store.ro
+tm.ro
+www.ro
+
+// rs
+rs
+ac.rs
+co.rs
+edu.rs
+gov.rs
+in.rs
+org.rs
+
+// ru
+ru
+
+// rw
+rw
+ac.rw
+co.rw
+coop.rw
+gov.rw
+mil.rw
+net.rw
+org.rw
+
+// sa
+sa
+com.sa
+net.sa
+org.sa
+gov.sa
+med.sa
+pub.sa
+edu.sa
+sch.sa
+
+// sb
+sb
+com.sb
+edu.sb
+gov.sb
+net.sb
+org.sb
+
+// sc
+sc
+com.sc
+gov.sc
+net.sc
+org.sc
+edu.sc
+
+// sd
+sd
+com.sd
+net.sd
+org.sd
+edu.sd
+med.sd
+tv.sd
+gov.sd
+info.sd
+
+// se
+se
+a.se
+ac.se
+b.se
+bd.se
+brand.se
+c.se
+d.se
+e.se
+f.se
+fh.se
+fhsk.se
+fhv.se
+g.se
+h.se
+i.se
+k.se
+komforb.se
+kommunalforbund.se
+komvux.se
+l.se
+lanbib.se
+m.se
+n.se
+naturbruksgymn.se
+o.se
+org.se
+p.se
+parti.se
+pp.se
+press.se
+r.se
+s.se
+t.se
+tm.se
+u.se
+w.se
+x.se
+y.se
+z.se
+
+// sg
+sg
+com.sg
+net.sg
+org.sg
+gov.sg
+edu.sg
+per.sg
+
+// sh
+sh
+com.sh
+net.sh
+gov.sh
+org.sh
+mil.sh
+
+// si
+si
+
+// sk
+sk
+
+// sl
+sl
+com.sl
+net.sl
+edu.sl
+gov.sl
+org.sl
+
+// sm
+sm
+
+// sn
+sn
+art.sn
+com.sn
+edu.sn
+gouv.sn
+org.sn
+perso.sn
+univ.sn
+
+// so
+so
+com.so
+edu.so
+gov.so
+me.so
+net.so
+org.so
+
+// sr
+sr
+
+// ss
+ss
+biz.ss
+com.ss
+edu.ss
+gov.ss
+me.ss
+net.ss
+org.ss
+sch.ss
+
+// st
+st
+co.st
+com.st
+consulado.st
+edu.st
+embaixada.st
+mil.st
+net.st
+org.st
+principe.st
+saotome.st
+store.st
+
+// su
+su
+
+// sv
+sv
+com.sv
+edu.sv
+gob.sv
+org.sv
+red.sv
+
+// sx
+sx
+gov.sx
+
+// sy
+sy
+edu.sy
+gov.sy
+net.sy
+mil.sy
+com.sy
+org.sy
+
+// sz
+sz
+co.sz
+ac.sz
+org.sz
+
+// tc
+tc
+
+// td
+td
+
+// tel
+tel
+
+// tf
+tf
+
+// tg
+tg
+
+// th
+th
+ac.th
+co.th
+go.th
+in.th
+mi.th
+net.th
+or.th
+
+// tj
+tj
+ac.tj
+biz.tj
+co.tj
+com.tj
+edu.tj
+go.tj
+gov.tj
+int.tj
+mil.tj
+name.tj
+net.tj
+nic.tj
+org.tj
+test.tj
+web.tj
+
+// tk
+tk
+
+// tl
+tl
+gov.tl
+
+// tm
+tm
+com.tm
+co.tm
+org.tm
+net.tm
+nom.tm
+gov.tm
+mil.tm
+edu.tm
+
+// tn
+tn
+com.tn
+ens.tn
+fin.tn
+gov.tn
+ind.tn
+intl.tn
+nat.tn
+net.tn
+org.tn
+info.tn
+perso.tn
+tourism.tn
+edunet.tn
+rnrt.tn
+rns.tn
+rnu.tn
+mincom.tn
+agrinet.tn
+defense.tn
+turen.tn
+
+// to
+to
+com.to
+gov.to
+net.to
+org.to
+edu.to
+mil.to
+
+// tr
+tr
+av.tr
+bbs.tr
+bel.tr
+biz.tr
+com.tr
+dr.tr
+edu.tr
+gen.tr
+gov.tr
+info.tr
+mil.tr
+k12.tr
+kep.tr
+name.tr
+net.tr
+org.tr
+pol.tr
+tel.tr
+tsk.tr
+tv.tr
+web.tr
+
+// tt
+tt
+co.tt
+com.tt
+org.tt
+net.tt
+biz.tt
+info.tt
+pro.tt
+int.tt
+cpe.tt
+gov.tt
+edu.tt
+
+// tv
+tv
+
+// tw
+tw
+edu.tw
+gov.tw
+mil.tw
+com.tw
+net.tw
+org.tw
+idv.tw
+game.tw
+ebiz.tw
+club.tw
+
+// tz
+tz
+ac.tz
+co.tz
+go.tz
+hotel.tz
+info.tz
+me.tz
+mil.tz
+mobi.tz
+ne.tz
+or.tz
+sc.tz
+tv.tz
+
+// ua
+ua
+com.ua
+edu.ua
+gov.ua
+in.ua
+net.ua
+org.ua
+
+// ug
+ug
+co.ug
+or.ug
+ac.ug
+sc.ug
+go.ug
+ne.ug
+com.ug
+org.ug
+
+// uk
+uk
+ac.uk
+co.uk
+gov.uk
+ltd.uk
+me.uk
+net.uk
+nhs.uk
+org.uk
+plc.uk
+police.uk
+sch.uk
+
+// us
+us
+dni.us
+fed.us
+isa.us
+kids.us
+nsn.us
+
+// uy
+uy
+com.uy
+edu.uy
+gub.uy
+mil.uy
+net.uy
+org.uy
+
+// uz
+uz
+co.uz
+com.uz
+net.uz
+org.uz
+
+// va
+va
+
+// vc
+vc
+com.vc
+net.vc
+org.vc
+gov.vc
+mil.vc
+edu.vc
+
+// ve
+ve
+arts.ve
+co.ve
+com.ve
+e12.ve
+edu.ve
+firm.ve
+gob.ve
+gov.ve
+info.ve
+int.ve
+mil.ve
+net.ve
+org.ve
+rec.ve
+store.ve
+tec.ve
+web.ve
+
+// vg
+vg
+
+// vi
+vi
+co.vi
+com.vi
+k12.vi
+net.vi
+org.vi
+
+// vn
+vn
+com.vn
+net.vn
+org.vn
+edu.vn
+gov.vn
+int.vn
+ac.vn
+biz.vn
+info.vn
+name.vn
+pro.vn
+health.vn
+
+// vu
+vu
+com.vu
+edu.vu
+net.vu
+org.vu
+
+// wf
+wf
+
+// ws
+ws
+com.ws
+net.ws
+org.ws
+gov.ws
+edu.ws
+
+// ye
+ye
+com.ye
+edu.ye
+gov.ye
+net.ye
+mil.ye
+org.ye
+
+// za
+za
+ac.za
+agric.za
+alt.za
+co.za
+edu.za
+gov.za
+grondar.za
+law.za
+mil.za
+net.za
+ngo.za
+nic.za
+nis.za
+nom.za
+org.za
+school.za
+tm.za
+web.za
+
+// zm
+zm
+ac.zm
+biz.zm
+co.zm
+com.zm
+edu.zm
+gov.zm
+info.zm
+mil.zm
+net.zm
+org.zm
+sch.zm
+
+// zw
+zw
+ac.zw
+co.zw
+gov.zw
+mil.zw
+org.zw
+
+// ===END ICANN DOMAINS===
+
+// ===BEGIN PRIVATE DOMAINS===
+
+// Amazon
+amazonaws.com
+compute.amazonaws.com
+s3.amazonaws.com
+
+// GitHub
+github.io
+githubusercontent.com
+
+// Google
+appspot.com
+blogspot.com
+cloud.google.com
+googleapis.com
+googlecode.com
+run.app
+web.app
+firebaseapp.com
+
+// Heroku
+herokuapp.com
+
+// Microsoft
+azurewebsites.net
+cloudapp.net
+trafficmanager.net
+
+// Netlify
+netlify.app
+
+// Shopify
+myshopify.com
+
+// Vercel
+vercel.app
+now.sh
+
+// Cloudflare
+pages.dev
+workers.dev
+
+// ===END PRIVATE DOMAINS===

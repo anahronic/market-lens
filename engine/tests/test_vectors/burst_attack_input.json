@@ -1,0 +1,195 @@
+{
+  "description": "Burst attack — one domain submits a sudden spike of observations",
+  "observations": [
+    {
+      "source_url": "https://legit-shop.com/product/1",
+      "merchant_id": "legit_merchant_1",
+      "price": 200.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699800000,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://legit-shop2.com/product/2",
+      "merchant_id": "legit_merchant_2",
+      "price": 205.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699810000,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://legit-shop3.com/product/3",
+      "merchant_id": "legit_merchant_3",
+      "price": 198.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699820000,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/1",
+      "merchant_id": "attacker_1",
+      "price": 150.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990000,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/2",
+      "merchant_id": "attacker_2",
+      "price": 148.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990100,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/3",
+      "merchant_id": "attacker_3",
+      "price": 152.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990200,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/4",
+      "merchant_id": "attacker_4",
+      "price": 149.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990300,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/5",
+      "merchant_id": "attacker_5",
+      "price": 151.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990400,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/6",
+      "merchant_id": "attacker_6",
+      "price": 147.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990500,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://attacker-domain.com/flood/7",
+      "merchant_id": "attacker_7",
+      "price": 153.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699990600,
+      "product_identity_layer": {
+        "brand": "BrandA",
+        "model": "Phone1",
+        "sku": "PH001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "128gb",
+        "release_year": "2025"
+      }
+    }
+  ]
+}

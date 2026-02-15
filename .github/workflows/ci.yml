@@ -1,0 +1,62 @@
+name: DKP-PTL-REG v0.6 Deterministic CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deterministic-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install -e .
+
+      - name: Run deterministic test vectors (byte-for-byte vs committed expected)
+        run: |
+          python -m engine.tests.test_runner
+
+      - name: Run pytest suite
+        run: |
+          pytest engine/tests/ -v
+
+      - name: Verify PSL snapshot hash
+        run: |
+          EXPECTED_HASH=$(python -c "import json; r=json.load(open('artifact_registry/Artifact_Registry_v0.6.json')); print(r['psl_snapshot']['sha256'])")
+          ACTUAL_HASH=$(sha256sum engine/src/psl_snapshot/PSL-2026-01-01.dat | cut -d' ' -f1)
+          echo "Expected: $EXPECTED_HASH"
+          echo "Actual:   $ACTUAL_HASH"
+          if [ "$EXPECTED_HASH" != "$ACTUAL_HASH" ]; then
+            echo "PSL HASH MISMATCH"; exit 1
+          fi
+          echo "PSL snapshot hash verified."
+
+      - name: Verify cross-run determinism (read-only, no file modification)
+        run: |
+          python scripts/det_check.py
+        shell: bash
+
+      - name: Verify no committed files were modified
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "ERROR: CI modified tracked files!"
+            git status --porcelain
+            git diff --stat
+            exit 1
+          fi
+          echo "Working tree clean — no files modified by CI."

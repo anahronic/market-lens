@@ -1,0 +1,100 @@
+{
+  "description": "Uniform competitive market — 5 domains, similar prices, recent timestamps",
+  "observations": [
+    {
+      "source_url": "https://shop.alpha.com/product/123",
+      "merchant_id": "alpha_merchant",
+      "price": 100.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "TestBrand",
+        "model": "ModelX",
+        "sku": "SKU001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "256gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://store.beta.com/item/456",
+      "merchant_id": "beta_merchant",
+      "price": 102.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699910000,
+      "product_identity_layer": {
+        "brand": "TestBrand",
+        "model": "ModelX",
+        "sku": "SKU001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "256gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://www.gamma.com/buy/789",
+      "merchant_id": "gamma_merchant",
+      "price": 99.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699920000,
+      "product_identity_layer": {
+        "brand": "TestBrand",
+        "model": "ModelX",
+        "sku": "SKU001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "256gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://delta.com/products/abc",
+      "merchant_id": "delta_merchant",
+      "price": 101.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930000,
+      "product_identity_layer": {
+        "brand": "TestBrand",
+        "model": "ModelX",
+        "sku": "SKU001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "256gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://epsilon.com/offer/def",
+      "merchant_id": "epsilon_merchant",
+      "price": 103.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699940000,
+      "product_identity_layer": {
+        "brand": "TestBrand",
+        "model": "ModelX",
+        "sku": "SKU001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "256gb",
+        "release_year": "2025"
+      }
+    }
+  ]
+}

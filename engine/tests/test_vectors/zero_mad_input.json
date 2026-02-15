@@ -1,0 +1,100 @@
+{
+  "description": "Zero MAD — all observations have identical prices",
+  "observations": [
+    {
+      "source_url": "https://shop-a.com/product/fixed",
+      "merchant_id": "merchant_a",
+      "price": 75.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "FixedBrand",
+        "model": "FixedModel",
+        "sku": "FX001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://shop-b.com/product/fixed",
+      "merchant_id": "merchant_b",
+      "price": 75.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699910000,
+      "product_identity_layer": {
+        "brand": "FixedBrand",
+        "model": "FixedModel",
+        "sku": "FX001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://shop-c.com/product/fixed",
+      "merchant_id": "merchant_c",
+      "price": 75.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699920000,
+      "product_identity_layer": {
+        "brand": "FixedBrand",
+        "model": "FixedModel",
+        "sku": "FX001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://shop-d.com/product/fixed",
+      "merchant_id": "merchant_d",
+      "price": 75.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930000,
+      "product_identity_layer": {
+        "brand": "FixedBrand",
+        "model": "FixedModel",
+        "sku": "FX001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://shop-e.com/product/fixed",
+      "merchant_id": "merchant_e",
+      "price": 75.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699940000,
+      "product_identity_layer": {
+        "brand": "FixedBrand",
+        "model": "FixedModel",
+        "sku": "FX001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    }
+  ]
+}

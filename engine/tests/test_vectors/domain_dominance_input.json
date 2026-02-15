@@ -1,0 +1,157 @@
+{
+  "description": "Domain dominance — one domain contributes >30% of total weight",
+  "observations": [
+    {
+      "source_url": "https://dominant-shop.com/product/1",
+      "merchant_id": "dom_merchant_1",
+      "price": 500.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://dominant-shop.com/product/2",
+      "merchant_id": "dom_merchant_2",
+      "price": 505.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699910000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://dominant-shop.com/product/3",
+      "merchant_id": "dom_merchant_3",
+      "price": 498.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699920000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://dominant-shop.com/product/4",
+      "merchant_id": "dom_merchant_4",
+      "price": 502.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://dominant-shop.com/product/5",
+      "merchant_id": "dom_merchant_5",
+      "price": 510.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699940000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://dominant-shop.com/product/6",
+      "merchant_id": "dom_merchant_6",
+      "price": 495.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699950000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://minor-shop1.com/product/1",
+      "merchant_id": "minor_merchant_1",
+      "price": 520.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://minor-shop2.com/product/1",
+      "merchant_id": "minor_merchant_2",
+      "price": 515.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699910000,
+      "product_identity_layer": {
+        "brand": "BrandB",
+        "model": "Laptop1",
+        "sku": "LT001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "512gb",
+        "release_year": "2025"
+      }
+    }
+  ]
+}

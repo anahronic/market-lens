@@ -1,0 +1,13 @@
+{
+  "applied_profile": "BASE",
+  "protocol_version": "0.6.0",
+  "constants_version": "0.6.0",
+  "identity_scope_level": 0,
+  "P_ref": 198.0,
+  "MAD": 46.5,
+  "CS": 0.503423,
+  "N_eff": 5.316136,
+  "cold_start_flag": false,
+  "insufficient_data_flag": false,
+  "integrity_status": "DOMAIN_DOMINANCE"
+}

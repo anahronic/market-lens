@@ -1,0 +1,24 @@
+{
+  "description": "Cold start — insufficient observations to produce reference price",
+  "observations": [
+    {
+      "source_url": "https://only-store.com/product/rare",
+      "merchant_id": "lone_merchant",
+      "price": 1000.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "RareBrand",
+        "model": "UniqueModel",
+        "sku": "RARE001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    }
+  ]
+}
