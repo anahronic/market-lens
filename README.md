@@ -148,6 +148,79 @@ python -m engine.src run \
 | `--profile` | Yes | Constants profile: `BASE` or `HARDENED` |
 | `--current_time_utc` | Yes | Current time as Unix epoch seconds (UTC). Engine never reads system clock implicitly. |
 
+---
+
+## Service Mode
+
+Market Lens can also run as an HTTP API service with background worker processing.
+
+### Run API Locally
+
+```bash
+pip install -e ".[dev]"
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+```
+
+### Run Worker Locally
+
+```bash
+python -m worker.main
+```
+
+### Environment Variables
+
+| Variable | Default | Description |
+|---|---|---|
+| `MARKET_LENS_PROFILE` | `BASE` | Default profile (BASE or HARDENED) |
+| `MARKET_LENS_QUEUE_DIR` | `./var/queue` | Queue directory path |
+| `MARKET_LENS_POLL_INTERVAL` | `5` | Worker poll interval (seconds) |
+| `MARKET_LENS_SERVICE_MODE` | `local` | Service mode identifier |
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/health` | GET | Health check with version info |
+| `/version` | GET | Detailed version information |
+| `/v1/evaluate` | POST | Evaluate observations (synchronous) |
+| `/v1/ingest` | POST | Queue observations for background processing |
+
+### Example Evaluate Request
+
+```bash
+curl -X POST http://localhost:8000/v1/evaluate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "observations": [{
+      "source_url": "https://shop.example.com/product/1",
+      "merchant_id": "merchant",
+      "price": 100.0,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "Brand", "model": "Model", "sku": "SKU",
+        "condition": "new", "bundle_flag": "", "warranty_type": "",
+        "region_variant": "", "storage_or_size": "", "release_year": "2025"
+      }
+    }],
+    "current_time_utc": 1700000000,
+    "applied_profile": "BASE"
+  }'
+```
+
+### Queue Directory Layout
+
+```
+var/queue/
+├── pending/      # Jobs awaiting processing
+├── processing/   # Jobs currently being processed
+├── completed/    # Successfully completed jobs
+└── failed/       # Jobs that failed validation
+```
+
+---
+
 ### Input JSON Format
 
 ```json
