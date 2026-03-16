@@ -48,9 +48,6 @@ location /api/ {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_connect_timeout 60s;
-    proxy_send_timeout 60s;
-    proxy_read_timeout 60s;
 }
 ```
 
@@ -81,9 +78,6 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_connect_timeout 60s;
-        proxy_send_timeout 60s;
-        proxy_read_timeout 60s;
     }
     
     # ... other location blocks ...
@@ -178,3 +172,16 @@ bash deploy/scripts/verify_public_api.sh dikenocracy.com
 - The API only binds to `127.0.0.1`, not accessible from external network directly
 - nginx handles SSL termination
 - Cloudflare provides additional DDoS protection if DNS proxied
+
+---
+
+## Current Server-Specific Path
+
+On the current production server (`dikenocracy.com`):
+
+- **Active nginx site file:** `/etc/nginx/sites-available/default`
+- **Enabled symlink:** `/etc/nginx/sites-enabled/default`
+
+The Certbot-managed HTTPS configuration for `dikenocracy.com` already exists in this file. The `/api/` location block must be inserted into the existing HTTPS `server { ... }` block for `server_name dikenocracy.com www.dikenocracy.com;`.
+
+For step-by-step server-specific instructions, see [DEPLOY_NGINX_SERVER_STEPS.md](DEPLOY_NGINX_SERVER_STEPS.md).

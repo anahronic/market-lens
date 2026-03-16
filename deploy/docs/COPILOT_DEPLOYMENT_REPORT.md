@@ -16,8 +16,11 @@ Generated: 2026-03-16 (updated)
 | `deploy/scripts/verify_api.sh` | Local API health verification |
 | `deploy/scripts/install_systemd_services.sh` | Combined systemd installer |
 | `deploy/scripts/verify_public_api.sh` | Public API verification via HTTPS |
+| `deploy/scripts/show_nginx_api_snippet.sh` | Print nginx location block snippet |
+| `deploy/scripts/show_nginx_target_info.sh` | Print nginx site config info |
 | `deploy/docs/DEPLOY_API.md` | Production deployment guide |
 | `deploy/docs/DEPLOY_NGINX.md` | nginx reverse proxy guide |
+| `deploy/docs/DEPLOY_NGINX_SERVER_STEPS.md` | Server-specific nginx integration steps |
 | `deploy/docs/COPILOT_DEPLOYMENT_REPORT.md` | This report |
 
 ---
@@ -46,11 +49,14 @@ market-lens/
     │   ├── run_api_local.sh
     │   ├── verify_api.sh
     │   ├── install_systemd_services.sh
-    │   └── verify_public_api.sh
+    │   ├── verify_public_api.sh
+    │   ├── show_nginx_api_snippet.sh
+    │   └── show_nginx_target_info.sh
     │
     └── docs/
         ├── DEPLOY_API.md
         ├── DEPLOY_NGINX.md
+        ├── DEPLOY_NGINX_SERVER_STEPS.md
         └── COPILOT_DEPLOYMENT_REPORT.md
 ```
 
@@ -89,29 +95,27 @@ WantedBy=multi-user.target
 
 ```ini
 [Unit]
-Description=Market Lens Background Worker
-After=network.target market-lens-api.service
+Description=Market Lens Worker
+After=network.target
 
 [Service]
 User=admin
 Group=admin
-
 WorkingDirectory=/home/admin/projects/market-lens
-
 Environment=PYTHONPATH=/home/admin/projects/market-lens
 Environment=MARKET_LENS_PROFILE=BASE
 Environment=MARKET_LENS_QUEUE_DIR=/home/admin/projects/market-lens/var/queue
 Environment=MARKET_LENS_SERVICE_MODE=production
 Environment=MARKET_LENS_POLL_INTERVAL=5
-
 ExecStart=/home/admin/projects/market-lens/venv/bin/python -m worker.main
-
 Restart=always
-RestartSec=5
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+**Conformance note:** Worker service matches approved minimal spec (`After=network.target`, `RestartSec=3`).
 
 ---
 
@@ -125,9 +129,6 @@ location /api/ {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_connect_timeout 60s;
-    proxy_send_timeout 60s;
-    proxy_read_timeout 60s;
 }
 ```
 
@@ -242,7 +243,7 @@ curl https://dikenocracy.com/api/health
 ## Server Deployment Checklist
 
 - [ ] Pull latest from GitHub: `git pull origin main`
-- [ ] Install dependencies: `pip install fastapi uvicorn pydantic httpx`
+- [ ] Activate venv: `source venv/bin/activate` (use existing project virtual environment with installed locked dependencies)
 - [ ] Initialize queue: `bash deploy/scripts/init_queue_dirs.sh`
 - [ ] Install systemd services: `sudo bash deploy/scripts/install_systemd_services.sh`
 - [ ] Start services: `sudo systemctl start market-lens-api market-lens-worker`
@@ -261,3 +262,43 @@ curl https://dikenocracy.com/api/health
 - Engine code: not modified
 - API code: not modified
 - Tests: not modified
+
+---
+
+## nginx Server-Specific Deployment
+
+### Active Configuration
+
+- **Active nginx site file:** `/etc/nginx/sites-available/default`
+- **Enabled symlink:** `/etc/nginx/sites-enabled/default`
+
+### Location Block to Insert
+
+Insert inside the HTTPS `server { ... }` block for `server_name dikenocracy.com www.dikenocracy.com;`:
+
+```nginx
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+### Verification Commands
+
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+curl -I https://dikenocracy.com/api/health
+curl https://dikenocracy.com/api/health
+curl https://dikenocracy.com/api/version
+```
+
+### Operator Warning
+
+**The file `deploy/nginx/market-lens-api-location.conf` is NOT an executable script.**
+
+It is an nginx configuration snippet intended for copy/paste into the active nginx site configuration only. Do not attempt to execute it as a shell command.
