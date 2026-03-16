@@ -160,17 +160,19 @@
 ### Step 2 — Job Created
 
 - **File Path**: `{queue_dir}/pending/2487e18d-3812-4a3f-8d9f-0952bdd43bfc.json`
-- **Status**: **INFERRED PASS** (job_id returned, requires SSH to verify file)
+- **Status**: **NOT VERIFIED** — job_id returned does not prove file exists
 
 ### Step 3 — Worker Processed
 
 - **File Path**: `{queue_dir}/completed/2487e18d-3812-4a3f-8d9f-0952bdd43bfc.json`
-- **Status**: **REQUIRES SSH VERIFICATION**
+- **Status**: **NOT VERIFIED** — requires SSH to confirm worker claimed and processed
 - **Processing Time**: _requires server access_
 
 ### Step 4 — Result Validation (via /v1/evaluate)
 
-Tested synchronous engine computation via `/v1/evaluate` endpoint:
+Tested synchronous engine computation via `/v1/evaluate` endpoint.
+
+**Note**: This is a separate code path from async worker. It proves engine works, but does NOT prove worker pipeline works.
 
 - **Engine Status**: ok
 - **Protocol Version**: 0.6.0
@@ -192,43 +194,77 @@ Tested synchronous engine computation via `/v1/evaluate` endpoint:
 | Step | Result |
 |------|--------|
 | Step 1 — API Request Accepted | **PASS** |
-| Step 2 — Job File Created | **INFERRED PASS** (job_id returned) |
-| Step 3 — Worker Processed Job | **REQUIRES SSH** |
-| Step 4 — Result Valid (/v1/evaluate) | **PASS** |
+| Step 2 — Job File Created in pending/ | **NOT VERIFIED** |
+| Step 3 — Worker Claimed and Processed Job | **NOT VERIFIED** |
+| Step 4 — Completed Output Written | **NOT VERIFIED** |
+| Step 5 — Synchronous Engine Path (/v1/evaluate) | **PASS** |
 
-**Overall Result**: **PARTIAL PASS** — API layer verified, worker verification requires SSH
+**Overall Result**: **NOT VERIFIED** — full async pipeline not confirmed
+
+---
+
+## Known Discrepancy
+
+- **Payload sent**: 2 observations
+- **API response**: `observations_count: 1`
+
+This mismatch requires investigation. Possible causes:
+1. API endpoint counts differently than expected
+2. Only first observation was accepted
+3. Data from different test runs mixed in report
 
 ---
 
 ## Verification Notes
 
-### What Was Verified Remotely
+### What Was Verified Remotely (via HTTPS)
 
 1. **Health endpoint**: `https://dikenocracy.com/api/health` returns `{"status":"ok",...}`
 2. **Version endpoint**: `https://dikenocracy.com/api/version` returns protocol/constants 0.6.0
 3. **Ingest endpoint**: `https://dikenocracy.com/api/v1/ingest` accepts jobs and returns job_id
-4. **Evaluate endpoint**: `https://dikenocracy.com/api/v1/evaluate` runs engine computation
+4. **Evaluate endpoint**: `https://dikenocracy.com/api/v1/evaluate` runs engine computation (synchronous path)
 
-### What Requires SSH Verification
+### What Could NOT Be Verified (SSH unavailable)
 
-1. Job file created in `pending/` directory
-2. Worker moved job to `completed/` directory
-3. Output file contains valid result
-4. Worker logs show processing
+SSH connection to `admin@37.27.244.96` timed out. Without SSH:
 
-### To Complete Verification
+1. Cannot confirm job file created in `pending/`
+2. Cannot confirm worker claimed job from queue
+3. Cannot confirm output written to `completed/`
+4. Cannot read worker logs for processing evidence
 
-Run on server:
+### Verification Required for Full PASS
+
+User must run on server:
+
 ```bash
 cd ~/projects/market-lens
-git pull origin main
-bash scripts/run_e2e_pipeline_test.sh
+JOB_ID="2487e18d-3812-4a3f-8d9f-0952bdd43bfc"
+
+# 1. Find job file
+find var/queue -type f | grep "$JOB_ID"
+
+# 2. Check worker logs for this job
+journalctl -u market-lens-worker -n 200 --no-pager | grep "$JOB_ID"
+
+# 3. Read completed output if exists
+python3 - <<'PY'
+import json, pathlib
+job_id = "2487e18d-3812-4a3f-8d9f-0952bdd43bfc"
+for p in pathlib.Path("var/queue/completed").glob(f"{job_id}.json"):
+    data = json.loads(p.read_text())
+    print(json.dumps(data, indent=2, ensure_ascii=False))
+PY
 ```
 
-Or:
-```bash
-python3 scripts/e2e_pipeline_check.py --queue-dir /home/admin/projects/market-lens/var/queue
-```
+### Criteria for Final Status
+
+| Outcome | Status |
+|---------|--------|
+| `completed/{job_id}.json` exists with valid result | **PASS** |
+| `failed/{job_id}.json` exists | **FAIL** |
+| No completed/failed file, no log evidence | **NOT VERIFIED** |
+| Only ingest response returned | **NOT A PIPELINE PASS** |
 
 ---
 
