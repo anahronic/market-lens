@@ -124,3 +124,70 @@ bash deploy/scripts/verify_api.sh
 | `MARKET_LENS_QUEUE_DIR` | `./var/queue` | Queue directory path |
 | `MARKET_LENS_SERVICE_MODE` | `local` | Service mode identifier |
 | `MARKET_LENS_POLL_INTERVAL` | `5` | Worker poll interval (seconds) |
+
+---
+
+## 10. Install Worker Service
+
+The background worker processes queued ingestion jobs.
+
+```bash
+sudo cp deploy/systemd/market-lens-worker.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable market-lens-worker
+sudo systemctl start market-lens-worker
+```
+
+Check worker status:
+```bash
+systemctl status market-lens-worker
+journalctl -u market-lens-worker -f
+```
+
+---
+
+## 11. Combined Install Script
+
+Install both API and worker services at once:
+
+```bash
+sudo bash deploy/scripts/install_systemd_services.sh
+```
+
+---
+
+## 12. nginx Reverse Proxy
+
+See [DEPLOY_NGINX.md](DEPLOY_NGINX.md) for detailed nginx configuration.
+
+Quick summary:
+1. Identify active site config: `ls -la /etc/nginx/sites-enabled/`
+2. Add location block from `deploy/nginx/market-lens-api-location.conf`
+3. Test: `sudo nginx -t`
+4. Reload: `sudo systemctl reload nginx`
+
+---
+
+## 13. Public API Verification
+
+After nginx is configured:
+
+```bash
+bash deploy/scripts/verify_public_api.sh dikenocracy.com
+```
+
+Or manually:
+```bash
+curl https://dikenocracy.com/api/health
+```
+
+---
+
+## Full Deployment Order
+
+1. `git pull origin main`
+2. `pip install fastapi uvicorn pydantic httpx`
+3. `bash deploy/scripts/init_queue_dirs.sh`
+4. `sudo bash deploy/scripts/install_systemd_services.sh`
+5. Configure nginx (see DEPLOY_NGINX.md)
+6. `bash deploy/scripts/verify_public_api.sh dikenocracy.com`

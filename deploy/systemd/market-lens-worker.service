@@ -1,0 +1,19 @@
+[Unit]
+Description=Market Lens Worker
+After=network.target
+
+[Service]
+User=admin
+Group=admin
+WorkingDirectory=/home/admin/projects/market-lens
+Environment=PYTHONPATH=/home/admin/projects/market-lens
+Environment=MARKET_LENS_PROFILE=BASE
+Environment=MARKET_LENS_QUEUE_DIR=/home/admin/projects/market-lens/var/queue
+Environment=MARKET_LENS_SERVICE_MODE=production
+Environment=MARKET_LENS_POLL_INTERVAL=5
+ExecStart=/home/admin/projects/market-lens/venv/bin/python -m worker.main
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
