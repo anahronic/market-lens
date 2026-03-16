@@ -6,12 +6,21 @@
 
 | Field | Value |
 |-------|-------|
-| **Test Date UTC** | _TO BE FILLED_ |
+| **Test Date UTC** | 2026-03-16T17:58:07Z |
 | **Hostname** | dikenocracy.com (37.27.244.96) |
-| **Active Git Commit** | _TO BE FILLED_ |
+| **Active Git Commit** | 4536939 |
 | **Protocol Version** | 0.6.0 |
 | **Constants Version** | 0.6.0 |
 | **Applied Profile** | BASE |
+
+---
+
+## Service Status (User Confirmed)
+
+| Service | Status |
+|---------|--------|
+| `market-lens-api.service` | **active** |
+| `market-lens-worker.service` | **active** |
 
 ---
 
@@ -85,15 +94,6 @@
 
 ---
 
-## Service Status
-
-| Service | Status |
-|---------|--------|
-| `market-lens-api.service` | _TO BE FILLED_ |
-| `market-lens-worker.service` | _TO BE FILLED_ |
-
----
-
 ## Test Payload
 
 ```json
@@ -152,35 +152,38 @@
 
 ### Step 1 — API Request
 
-- **Request**: `POST http://127.0.0.1:8000/v1/ingest`
-- **Status**: _TO BE FILLED_
-- **Job ID**: _TO BE FILLED_
+- **Request**: `POST https://dikenocracy.com/api/v1/ingest`
+- **Status**: **PASS**
+- **Job ID**: `2487e18d-3812-4a3f-8d9f-0952bdd43bfc`
+- **Response**: `{"status":"ok","job_id":"2487e18d-3812-4a3f-8d9f-0952bdd43bfc","accepted_timestamp":1773681487.3035557,"observations_count":1}`
 
 ### Step 2 — Job Created
 
-- **File Path**: `{queue_dir}/pending/{job_id}.json`
-- **Status**: _TO BE FILLED_
+- **File Path**: `{queue_dir}/pending/2487e18d-3812-4a3f-8d9f-0952bdd43bfc.json`
+- **Status**: **INFERRED PASS** (job_id returned, requires SSH to verify file)
 
 ### Step 3 — Worker Processed
 
-- **File Path**: `{queue_dir}/completed/{job_id}.json`
-- **Status**: _TO BE FILLED_
-- **Processing Time**: _TO BE FILLED_
+- **File Path**: `{queue_dir}/completed/2487e18d-3812-4a3f-8d9f-0952bdd43bfc.json`
+- **Status**: **REQUIRES SSH VERIFICATION**
+- **Processing Time**: _requires server access_
 
-### Step 4 — Result Validation
+### Step 4 — Result Validation (via /v1/evaluate)
 
-- **Engine Status**: _TO BE FILLED_
-- **Protocol Version**: _TO BE FILLED_
-- **Constants Version**: _TO BE FILLED_
-- **Applied Profile**: _TO BE FILLED_
-- **Accepted Count**: _TO BE FILLED_
-- **Rejected Count**: _TO BE FILLED_
-- **P_ref**: _TO BE FILLED_
-- **MAD**: _TO BE FILLED_
-- **CS**: _TO BE FILLED_
-- **N_eff**: _TO BE FILLED_
-- **Cold Start Flag**: _TO BE FILLED_
-- **Integrity Status**: _TO BE FILLED_
+Tested synchronous engine computation via `/v1/evaluate` endpoint:
+
+- **Engine Status**: ok
+- **Protocol Version**: 0.6.0
+- **Constants Version**: 0.6.0
+- **Applied Profile**: BASE
+- **Accepted Count**: 2
+- **Rejected Count**: 0
+- **P_ref**: null (cold start)
+- **MAD**: null (cold start)
+- **CS**: 0.0
+- **N_eff**: 0.0
+- **Cold Start Flag**: true
+- **Integrity Status**: COLD_START
 
 ---
 
@@ -188,12 +191,44 @@
 
 | Step | Result |
 |------|--------|
-| Step 1 — API Request Accepted | _TO BE FILLED_ |
-| Step 2 — Job File Created | _TO BE FILLED_ |
-| Step 3 — Worker Processed Job | _TO BE FILLED_ |
-| Step 4 — Result Valid | _TO BE FILLED_ |
+| Step 1 — API Request Accepted | **PASS** |
+| Step 2 — Job File Created | **INFERRED PASS** (job_id returned) |
+| Step 3 — Worker Processed Job | **REQUIRES SSH** |
+| Step 4 — Result Valid (/v1/evaluate) | **PASS** |
 
-**Overall Result**: _TO BE FILLED_ (PASS / FAIL)
+**Overall Result**: **PARTIAL PASS** — API layer verified, worker verification requires SSH
+
+---
+
+## Verification Notes
+
+### What Was Verified Remotely
+
+1. **Health endpoint**: `https://dikenocracy.com/api/health` returns `{"status":"ok",...}`
+2. **Version endpoint**: `https://dikenocracy.com/api/version` returns protocol/constants 0.6.0
+3. **Ingest endpoint**: `https://dikenocracy.com/api/v1/ingest` accepts jobs and returns job_id
+4. **Evaluate endpoint**: `https://dikenocracy.com/api/v1/evaluate` runs engine computation
+
+### What Requires SSH Verification
+
+1. Job file created in `pending/` directory
+2. Worker moved job to `completed/` directory
+3. Output file contains valid result
+4. Worker logs show processing
+
+### To Complete Verification
+
+Run on server:
+```bash
+cd ~/projects/market-lens
+git pull origin main
+bash scripts/run_e2e_pipeline_test.sh
+```
+
+Or:
+```bash
+python3 scripts/e2e_pipeline_check.py --queue-dir /home/admin/projects/market-lens/var/queue
+```
 
 ---
 
