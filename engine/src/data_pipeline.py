@@ -30,6 +30,11 @@ def _round6(x: float) -> float:
     return round(x, 6)
 
 
+def _ge_with_tol(value: float, threshold: float, eps: float = 1e-12) -> bool:
+    """Deterministic threshold comparison resilient to tiny IEEE-754 drift."""
+    return value + eps >= threshold
+
+
 def _sha256_to_normalized_float(s: str) -> float:
     """
     SHA256(string)[0:64bits] normalized to [0,1].
@@ -891,7 +896,9 @@ def execute_pipeline(
     # -----------------------------------------------------------------------
     # Step 16: ColdStart Check
     # -----------------------------------------------------------------------
-    if sum_w < constants.W_min or N_eff < constants.N_eff_min:
+    if (not _ge_with_tol(sum_w, constants.W_min)) or (
+        not _ge_with_tol(N_eff, constants.N_eff_min)
+    ):
         result.P_ref = None
         result.MAD = None
         result.CS = 0.0
