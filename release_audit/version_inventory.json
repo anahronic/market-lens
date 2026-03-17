@@ -1,0 +1,38 @@
+{
+  "generated_utc": "2026-03-17T07:54:58Z",
+  "git": {
+    "commit": "d473895d021c03ed244eb5ce8590e7ee9ad81f1d",
+    "branch": "main",
+    "tags": []
+  },
+  "sources": {
+    "engine/src/constants.py": {
+      "PROTOCOL_VERSION": "0.6.0",
+      "CONSTANTS_VERSION": "0.6.0"
+    },
+    "service/version_info.py": {
+      "ENGINE_VERSION": "0.6.0",
+      "PSL_VERSION": "PSL-2026-01-01"
+    },
+    "artifact_registry/Artifact_Registry_v0.6.json": {
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0"
+    },
+    "Protocols/DKP-PTL-REG-001.md": {
+      "document_version": "0.6"
+    }
+  },
+  "unique_versions_found": [
+    "0.6",
+    "0.6.0",
+    "PSL-2026-01-01"
+  ],
+  "version_consistency": {
+    "is_consistent": false,
+    "base_versions": [
+      "0.6",
+      "0.6.0",
+      "PSL"
+    ]
+  }
+}

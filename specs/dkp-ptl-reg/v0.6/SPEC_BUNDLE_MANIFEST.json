@@ -1,0 +1,44 @@
+{
+  "protocol": "DKP-PTL-REG",
+  "version": "0.6",
+  "status": "frozen",
+  "normative_documents": [
+    {
+      "id": "DKP-PTL-REG-001",
+      "title": "Pricing Transparency Registry Protocol",
+      "filename": "DKP-PTL-REG-001.md",
+      "type": "core-protocol"
+    },
+    {
+      "id": "DKP-PTL-REG-DATA-001",
+      "title": "Data Model Specification",
+      "filename": "DKP-PTL-REG-DATA-001.md",
+      "type": "data-model"
+    },
+    {
+      "id": "DKP-PTL-REG-CONSTANTS-001",
+      "title": "Constants and Profiles Specification",
+      "filename": "DKP-PTL-REG-CONSTANTS-001.md",
+      "type": "constants"
+    },
+    {
+      "id": "DKP-PTL-REG-REFERENCE-001",
+      "title": "Reference Price Computation Specification",
+      "filename": "DKP-PTL-REG-REFERENCE-001.md",
+      "type": "reference-computation"
+    },
+    {
+      "id": "DKP-PTL-REG-THREAT-001",
+      "title": "Threat Status Computation Specification",
+      "filename": "DKP-PTL-REG-THREAT-001.md",
+      "type": "threat-computation"
+    },
+    {
+      "id": "DKP-PTL-REG-GOV-001",
+      "title": "Governance and Versioning Specification",
+      "filename": "DKP-PTL-REG-GOV-001.md",
+      "type": "governance"
+    }
+  ],
+  "integrity_note": "SHA256 hashes for each document are maintained in artifact_registry/Artifact_Registry_v0.6.json"
+}

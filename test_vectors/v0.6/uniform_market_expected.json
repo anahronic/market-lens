@@ -1,0 +1,13 @@
+{
+  "applied_profile": "BASE",
+  "protocol_version": "0.6.0",
+  "constants_version": "0.6.0",
+  "identity_scope_level": 0,
+  "P_ref": 101.0,
+  "MAD": 1.0,
+  "CS": 0.53215,
+  "N_eff": 4.999672,
+  "cold_start_flag": false,
+  "insufficient_data_flag": false,
+  "integrity_status": "NORMAL"
+}

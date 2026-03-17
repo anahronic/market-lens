@@ -1,0 +1,107 @@
+{
+  "audit_metadata": {
+    "generated_utc": "2026-03-17T07:54:58Z",
+    "git_commit": "d473895d021c03ed244eb5ce8590e7ee9ad81f1d",
+    "duration_seconds": 0.001954
+  },
+  "summary": {
+    "total_checks": 22,
+    "passed": 22,
+    "failed": 0,
+    "warnings": 0,
+    "overall_status": "PASS"
+  },
+  "checks": {
+    "artifact_registry_exists": {
+      "status": "PASS",
+      "message": "/home/anahronic/market-lens/artifact_registry/Artifact_Registry_v0.6.json"
+    },
+    "registry_field_protocol_version": {
+      "status": "PASS",
+      "message": "Field 'protocol_version' present"
+    },
+    "registry_field_psl_snapshot": {
+      "status": "PASS",
+      "message": "Field 'psl_snapshot' present"
+    },
+    "registry_field_spec_documents": {
+      "status": "PASS",
+      "message": "Field 'spec_documents' present"
+    },
+    "registry_field_source_files": {
+      "status": "PASS",
+      "message": "Field 'source_files' present"
+    },
+    "registry_field_test_vectors": {
+      "status": "PASS",
+      "message": "Field 'test_vectors' present"
+    },
+    "psl_file_exists": {
+      "status": "PASS",
+      "message": "/home/anahronic/market-lens/engine/src/psl_snapshot/PSL-2026-01-01.dat"
+    },
+    "psl_hash_match": {
+      "status": "PASS",
+      "message": "SHA256: edee63489085821c..."
+    },
+    "test_vector_uniform_market": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "test_vector_burst_attack": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "test_vector_domain_dominance": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "test_vector_cluster_injection": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "test_vector_cold_start": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "test_vector_zero_mad": {
+      "status": "PASS",
+      "message": "Input and expected files present"
+    },
+    "canonical_spec_dir": {
+      "status": "PASS",
+      "message": "/home/anahronic/market-lens/specs/dkp-ptl-reg/v0.6"
+    },
+    "spec_DKP-PTL-REG-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "spec_DKP-PTL-REG-DATA-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "spec_DKP-PTL-REG-CONSTANTS-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "spec_DKP-PTL-REG-REFERENCE-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "spec_DKP-PTL-REG-THREAT-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "spec_DKP-PTL-REG-GOV-001.md": {
+      "status": "PASS",
+      "message": "Present"
+    },
+    "version_consistency": {
+      "status": "PASS",
+      "message": "All versions: 0.6.0"
+    },
+    "version_constants.PROTOCOL_VERSION": "0.6.0",
+    "version_constants.CONSTANTS_VERSION": "0.6.0",
+    "version_version_info.ENGINE_VERSION": "0.6.0"
+  }
+}

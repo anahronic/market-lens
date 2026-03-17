@@ -2,6 +2,8 @@
   "protocol_version": "0.6.0",
   "constants_version": "0.6.0",
   "generated_by": "scripts/generate_artifact_registry.py",
+  "generation_timestamp_utc": "2026-03-17T07:54:58Z",
+  "git_commit": "d473895d021c03ed244eb5ce8590e7ee9ad81f1d",
   "psl_snapshot": {
     "filename": "PSL-2026-01-01.dat",
     "sha256": "edee63489085821c1744bbc9225bb1ff9edd34f8451f1379273e124ebf5083cf"
@@ -9,18 +11,26 @@
   "spec_documents": {
     "Protocols/DKP-PTL-REG Implementation Roadmap.md": "a6584c0581ec26b17ef4233b1523f3748568898b7eed2b61fc65c7192087f671",
     "Protocols/DKP-PTL-REG-001.md": "72b8737839afe781fc930d4db87741f5218eaafa70f18090f1a7794c946c958f",
-    "Protocols/DKP-PTL-REG-CONSTANTS-001_.md": "22467ecb7520ffd8ab0b607fb24fd7bc0f0c3bdff5a1d78f7223863a22ea1430",
+    "Protocols/DKP-PTL-REG-CONSTANTS-001.md": "22467ecb7520ffd8ab0b607fb24fd7bc0f0c3bdff5a1d78f7223863a22ea1430",
     "Protocols/DKP-PTL-REG-DATA-001.md": "453cb94e162b010ba3d41f0d733928462d7ecc7d1ba01b2a677622c00c5df0ac",
     "Protocols/DKP-PTL-REG-GOV-001.md": "5ee22c84dd45002a918f98cc3e262097cdab49517cf9b61011bc092d7d1a6684",
     "Protocols/DKP-PTL-REG-REFERENCE-001.md": "a48ee9d0890342d6b782810c20456f3f83eb33bf5e4a81b91ebaf014f9bb15c8",
     "Protocols/DKP-PTL-REG-THREAT-001.md": "f83360f10fbee43157cd9f6035bf1c7fa925b93732c86f921e8c1c33227f40e9"
+  },
+  "canonical_specs": {
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-001.md": "72b8737839afe781fc930d4db87741f5218eaafa70f18090f1a7794c946c958f",
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-CONSTANTS-001.md": "22467ecb7520ffd8ab0b607fb24fd7bc0f0c3bdff5a1d78f7223863a22ea1430",
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-DATA-001.md": "453cb94e162b010ba3d41f0d733928462d7ecc7d1ba01b2a677622c00c5df0ac",
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-GOV-001.md": "5ee22c84dd45002a918f98cc3e262097cdab49517cf9b61011bc092d7d1a6684",
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-REFERENCE-001.md": "a48ee9d0890342d6b782810c20456f3f83eb33bf5e4a81b91ebaf014f9bb15c8",
+    "specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-THREAT-001.md": "f83360f10fbee43157cd9f6035bf1c7fa925b93732c86f921e8c1c33227f40e9"
   },
   "source_files": {
     "engine/src/__init__.py": "575e6aa01702bccca199c1c27bac1d28d13dc7997663505eb9d9e65ffa9e62db",
     "engine/src/__main__.py": "eedc45189123e9044f85288035efb9dba12052124b88cd378e8cdcc7cdac3660",
     "engine/src/cli.py": "c48d239988cbdf7d59e86186b2170bccd9ed242e42482125cf868b7ad9dcccc0",
     "engine/src/constants.py": "36e72af21941322909832d62055410a16e3930aef4ffebca33a47466e46777a7",
-    "engine/src/data_pipeline.py": "525b8876f49d5a4993ad6ee7639f392adf206f613b49e40208f9486f709024f0",
+    "engine/src/data_pipeline.py": "057a37cb93d884bd1542f70313543deed7b79c26adac26653a697670b90b7eb0",
     "engine/src/json_canonical.py": "52868d60f5f8b5c38b3c35c9beadac34864f0ef9fdd5080b582b1f9cf1ae8ea3",
     "engine/src/reference_boundary.py": "c51adfeae84f978068f58f1d6378a860fe5f0af12353e8a5b93fba0131c31c91",
     "engine/src/threat_status.py": "61eb11cb6bb37bf4aaec1cbc022a24fe50b1a71f2d8bf5470cd0815f3ad5b691"

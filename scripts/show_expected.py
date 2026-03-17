@@ -1,7 +1,18 @@
 #!/usr/bin/env python3
-import json, glob, os
-d = "/home/anahronic/market-lens/engine/tests/test_vectors"
-for f in sorted(glob.glob(os.path.join(d, "*_expected.json"))):
-    print(f"=== {os.path.basename(f)} ===")
-    with open(f) as fh:
-        print(fh.read())
+"""Pretty-print all *_expected.json vectors to stdout."""
+import json
+import sys
+from pathlib import Path
+
+_scripts_dir = str(Path(__file__).resolve().parent)
+if _scripts_dir not in sys.path:
+    sys.path.insert(0, _scripts_dir)
+from path_safety import safe_resolve
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+VECTORS_DIR = safe_resolve(REPO_ROOT, "engine/tests/test_vectors")
+
+for f in sorted(VECTORS_DIR.glob("*_expected.json")):
+    safe_resolve(VECTORS_DIR, f.name)          # validate each match
+    print(f"=== {f.name} ===")
+    print(f.read_text())

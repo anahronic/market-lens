@@ -1,0 +1,157 @@
+{
+  "description": "Similarity cluster injection — near-duplicate observations from same domain",
+  "observations": [
+    {
+      "source_url": "https://real-store.com/product/widget",
+      "merchant_id": "real_merchant",
+      "price": 50.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699900000,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://another-store.com/product/widget",
+      "merchant_id": "another_merchant",
+      "price": 52.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699910000,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://third-store.com/product/widget",
+      "merchant_id": "third_merchant",
+      "price": 48.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699920000,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://sybil-domain.com/inject/1",
+      "merchant_id": "sybil_merchant",
+      "price": 30.00,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930000,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://sybil-domain.com/inject/2",
+      "merchant_id": "sybil_merchant",
+      "price": 30.50,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930100,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://sybil-domain.com/inject/3",
+      "merchant_id": "sybil_merchant",
+      "price": 29.50,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930200,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://sybil-domain.com/inject/4",
+      "merchant_id": "sybil_merchant",
+      "price": 30.25,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930300,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    },
+    {
+      "source_url": "https://sybil-domain.com/inject/5",
+      "merchant_id": "sybil_merchant",
+      "price": 30.75,
+      "currency": "usd",
+      "region": "us",
+      "timestamp": 1699930400,
+      "product_identity_layer": {
+        "brand": "WidgetCo",
+        "model": "Widget1",
+        "sku": "WG001",
+        "condition": "new",
+        "bundle_flag": "false",
+        "warranty_type": "standard",
+        "region_variant": "",
+        "storage_or_size": "",
+        "release_year": "2025"
+      }
+    }
+  ]
+}

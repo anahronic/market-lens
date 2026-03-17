@@ -1,0 +1,107 @@
+{
+  "audit_metadata": {
+    "generated_utc": "2026-03-17T00:00:00Z",
+    "git_commit": "d473895d021c03ed244eb5ce8590e7ee9ad81f1d",
+    "git_branch": "main",
+    "protocol_version": "0.6.0",
+    "audit_type": "pre-release conformance"
+  },
+  "version_inventory": {
+    "constants.py": {
+      "PROTOCOL_VERSION": "0.6.0",
+      "CONSTANTS_VERSION": "0.6.0"
+    },
+    "version_info.py": {
+      "ENGINE_VERSION": "0.6.0",
+      "PSL_VERSION": "PSL-2026-01-01"
+    },
+    "git_tag": "v0.6.0",
+    "spec_documents_version": "0.6"
+  },
+  "normative_spec_files": {
+    "location": "Protocols/",
+    "files": [
+      "DKP-PTL-REG-001.md",
+      "DKP-PTL-REG-DATA-001.md",
+      "DKP-PTL-REG-CONSTANTS-001_.md",
+      "DKP-PTL-REG-REFERENCE-001.md",
+      "DKP-PTL-REG-THREAT-001.md",
+      "DKP-PTL-REG-GOV-001.md"
+    ],
+    "roadmap": "DKP-PTL-REG Implementation Roadmap.md",
+    "status": "PRESENT",
+    "note": "CONSTANTS file has trailing underscore in filename (non-canonical)"
+  },
+  "psl_snapshot": {
+    "location": "engine/src/psl_snapshot/",
+    "filename": "PSL-2026-01-01.dat",
+    "status": "PRESENT"
+  },
+  "test_vectors": {
+    "location": "engine/tests/test_vectors/",
+    "cases": [
+      "uniform_market",
+      "burst_attack",
+      "domain_dominance",
+      "cluster_injection",
+      "cold_start",
+      "zero_mad"
+    ],
+    "files_per_case": 2,
+    "total_files": 12,
+    "status": "COMPLETE"
+  },
+  "artifact_registry": {
+    "location": "artifact_registry/Artifact_Registry_v0.6.json",
+    "generator": "scripts/generate_artifact_registry.py",
+    "status": "PRESENT",
+    "missing_fields": ["generation_timestamp_utc", "git_commit"]
+  },
+  "service_components": {
+    "api": {
+      "location": "api/",
+      "status": "PRESENT"
+    },
+    "worker": {
+      "location": "worker/",
+      "status": "PRESENT"
+    },
+    "ingestion": {
+      "location": "ingestion/",
+      "status": "PRESENT"
+    },
+    "service_common": {
+      "location": "service/",
+      "status": "PRESENT"
+    }
+  },
+  "deployment_infrastructure": {
+    "location": "deploy/",
+    "systemd_units": ["market-lens-api.service", "market-lens-worker.service"],
+    "nginx_config": "nginx/market-lens.conf",
+    "scripts": ["deploy.sh", "preflight_check.sh"],
+    "status": "PRESENT"
+  },
+  "findings": {
+    "version_consistency": "PASS - all version strings use 0.6.0 consistently",
+    "spec_bundle_normalization": "NEEDS_WORK - files in Protocols/ not in canonical specs/ location",
+    "constants_filename": "NEEDS_FIX - trailing underscore: DKP-PTL-REG-CONSTANTS-001_.md",
+    "artifact_registry": "NEEDS_ENHANCEMENT - missing timestamp and git commit fields",
+    "test_vector_packaging": "NEEDS_WORK - no official ZIP archive generator",
+    "psl_verification": "NEEDS_WORK - no hash verification script",
+    "runtime_fingerprint": "MISSING - no tooling for comparing local vs server state",
+    "release_conformance": "MISSING - no automated release audit entry point"
+  },
+  "recommended_actions": [
+    "A. Create specs/dkp-ptl-reg/v0.6/ with canonical spec copies",
+    "B. Fix CONSTANTS filename (remove trailing underscore)",
+    "C. Add generation_timestamp_utc and git_commit to artifact registry generator",
+    "D. Create scripts/check_psl_snapshot.py for hash verification",
+    "E. Create scripts/package_test_vectors.py for official archive",
+    "F. Create python -m scripts.release_audit entry point",
+    "G. Create scripts/collect_runtime_fingerprint.py",
+    "H. Create scripts/compare_fingerprints.py",
+    "I. Create scripts/server_audit.sh and scripts/local_audit.sh",
+    "J. Create docs/RELEASE_AUDIT_RUNBOOK.md"
+  ]
+}
