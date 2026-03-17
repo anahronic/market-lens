@@ -2,8 +2,8 @@
   "protocol_version": "0.6.0",
   "constants_version": "0.6.0",
   "generated_by": "scripts/generate_artifact_registry.py",
-  "generation_timestamp_utc": "2026-03-17T08:39:28Z",
-  "git_commit": "190412cd8feb58297f6184c3896b663617a791d4",
+  "generation_timestamp_utc": "2026-03-17T16:01:55Z",
+  "git_commit": "f5de7dd2497fe0cfd2048e08934dd63c6d36cc76",
   "psl_snapshot": {
     "filename": "PSL-2026-01-01.dat",
     "sha256": "edee63489085821c1744bbc9225bb1ff9edd34f8451f1379273e124ebf5083cf"

@@ -25,3 +25,6 @@ _output_dump.txt
 var/
 logs/
 *.log
+
+# Generated audit outputs (regenerated on each audit run)
+release_audit/*.json
