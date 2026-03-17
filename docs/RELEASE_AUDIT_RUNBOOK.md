@@ -67,7 +67,7 @@ The artifact registry contains SHA256 hashes of all specification-relevant files
 python scripts/generate_artifact_registry.py
 
 # View registry
-cat artifact_registry/Artifact_Registry_v0.6.json
+cat artifacts/Artifact_Registry_v0.6.json
 ```
 
 **Registry sections:**
@@ -88,7 +88,13 @@ python scripts/generate_version_inventory.py
 **Version sources:**
 - `engine/src/constants.py`: `PROTOCOL_VERSION`, `CONSTANTS_VERSION`
 - `service/version_info.py`: `ENGINE_VERSION`, `PSL_VERSION`
-- `artifact_registry/Artifact_Registry_v0.6.json`
+- `artifacts/Artifact_Registry_v0.6.json`
+
+**Version Semantics Mapping Rule:**
+- Document versions use MAJOR.MINOR format (e.g., "0.6")
+- Code versions use SEMVER format (e.g., "0.6.0")
+- Mapping: Document version X.Y maps to code version X.Y.Z
+- PSL versions follow PSL-YYYY-MM-DD format
 
 **Expected versions:**
 - Protocol: `0.6.0`
@@ -215,7 +221,7 @@ To package test vectors for distribution:
 
 ```bash
 python scripts/package_test_vectors.py
-# Creates: official_test_vectors_v0.6.zip
+# Creates: artifacts/official_test_vectors_v0.6.zip
 ```
 
 ## Troubleshooting
@@ -247,7 +253,8 @@ python scripts/package_test_vectors.py
 | `release_audit/version_inventory.json` | All version strings catalog |
 | `release_audit/local_fingerprint.json` | Local runtime snapshot |
 | `release_audit/server_fingerprint.json` | Server runtime snapshot |
-| `artifact_registry/Artifact_Registry_v0.6.json` | SHA256 hashes of all artifacts |
+| `artifacts/Artifact_Registry_v0.6.json` | SHA256 hashes of all artifacts |
+| `artifacts/official_test_vectors_v0.6.zip` | Official test vectors archive |
 | `test_vectors/v0.6/MANIFEST.json` | Test vector package manifest |
 
 ## Scripts Reference
@@ -270,3 +277,17 @@ This runbook is specific to DKP-PTL-REG v0.6.0 (frozen).
 
 For governance and versioning policy, see:
 - `specs/dkp-ptl-reg/v0.6/DKP-PTL-REG-GOV-001.md`
+
+## Runtime Data Directories
+
+The following directories contain runtime/generated data and are excluded from version control:
+
+| Directory | Purpose | Location (server) |
+|-----------|---------|-------------------|
+| `var/queue/pending/` | Jobs awaiting processing | `/home/admin/projects/market-lens/var/queue/pending/` |
+| `var/queue/processing/` | Jobs currently being processed | `/home/admin/projects/market-lens/var/queue/processing/` |
+| `var/queue/completed/` | Successfully processed jobs | `/home/admin/projects/market-lens/var/queue/completed/` |
+| `var/queue/failed/` | Failed jobs | `/home/admin/projects/market-lens/var/queue/failed/` |
+| `logs/` | Application logs | Varies by deployment |
+
+These directories are listed in `.gitignore` and should never be committed. They are created automatically by the worker service at runtime.

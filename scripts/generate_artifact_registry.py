@@ -99,7 +99,7 @@ def main():
         registry["test_vectors"][rel] = sha256_file(str(tv))
 
     # Write registry
-    out_path = root / "artifact_registry" / "Artifact_Registry_v0.6.json"
+    out_path = root / "artifacts" / "Artifact_Registry_v0.6.json"
     with open(out_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(registry, f, indent=2, ensure_ascii=False)
         f.write("\n")

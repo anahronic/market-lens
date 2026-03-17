@@ -20,3 +20,8 @@ Thumbs.db
 # Zone.Identifier (Windows WSL artifact)
 *:Zone.Identifier
 _output_dump.txt
+
+# Runtime data directories (server-side queue, logs, etc.)
+var/
+logs/
+*.log

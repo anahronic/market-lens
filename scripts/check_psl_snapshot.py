@@ -35,7 +35,7 @@ def main():
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent
-    registry_path = root / "artifact_registry" / "Artifact_Registry_v0.6.json"
+    registry_path = root / "artifacts" / "Artifact_Registry_v0.6.json"
     
     # Check registry exists
     if not registry_path.exists():

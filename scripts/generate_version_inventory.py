@@ -104,11 +104,11 @@ def main():
         )
     
     # Artifact registry
-    registry_path = root / "artifact_registry" / "Artifact_Registry_v0.6.json"
+    registry_path = root / "artifacts" / "Artifact_Registry_v0.6.json"
     if registry_path.exists():
         with open(registry_path, "r", encoding="utf-8") as f:
             registry = json.load(f)
-        sources["artifact_registry/Artifact_Registry_v0.6.json"] = {
+        sources["artifacts/Artifact_Registry_v0.6.json"] = {
             "protocol_version": registry.get("protocol_version"),
             "constants_version": registry.get("constants_version"),
         }
@@ -125,6 +125,38 @@ def main():
     
     inventory["sources"] = sources
     
+    # Categorize versions by type
+    SEMVER_PATTERN = re.compile(r'^(\d+)\.(\d+)\.(\d+)$')
+    DOC_VERSION_PATTERN = re.compile(r'^(\d+)\.(\d+)$')
+    PSL_VERSION_PATTERN = re.compile(r'^PSL-\d{4}-\d{2}-\d{2}$')
+    
+    categorized = {
+        "semver": [],  # X.Y.Z format
+        "doc_version": [],  # X.Y format
+        "psl_version": [],  # PSL-YYYY-MM-DD format
+        "other": [],
+    }
+    
+    for source_key, source_versions in sources.items():
+        for ver_name, ver_val in source_versions.items():
+            if ver_val is None:
+                continue
+            if SEMVER_PATTERN.match(ver_val):
+                categorized["semver"].append((source_key, ver_name, ver_val))
+            elif DOC_VERSION_PATTERN.match(ver_val):
+                categorized["doc_version"].append((source_key, ver_name, ver_val))
+            elif PSL_VERSION_PATTERN.match(ver_val):
+                categorized["psl_version"].append((source_key, ver_name, ver_val))
+            else:
+                categorized["other"].append((source_key, ver_name, ver_val))
+    
+    inventory["categorized_versions"] = {
+        "semver": [v[2] for v in categorized["semver"]],
+        "doc_version": [v[2] for v in categorized["doc_version"]],
+        "psl_version": [v[2] for v in categorized["psl_version"]],
+        "other": [v[2] for v in categorized["other"]],
+    }
+    
     # Consolidate unique versions
     all_versions = set()
     for source_versions in sources.values():
@@ -134,11 +166,38 @@ def main():
     
     inventory["unique_versions_found"] = sorted(all_versions)
     
-    # Consistency check
-    base_versions = {v.replace("v", "").split("-")[0] for v in all_versions}
+    # Semantic consistency check
+    # Rule: All semver versions for protocol/constants must match
+    semver_versions = set(v[2] for v in categorized["semver"])
+    doc_versions = set(v[2] for v in categorized["doc_version"])
+    
+    # Check if doc versions map correctly to semver versions
+    # 0.6 should map to 0.6.* 
+    mapping_valid = True
+    mapping_notes = []
+    for doc_ver in doc_versions:
+        expected_prefix = doc_ver + "."
+        matching_semver = [sv for sv in semver_versions if sv.startswith(expected_prefix)]
+        if not matching_semver:
+            mapping_valid = False
+            mapping_notes.append(f"Document version '{doc_ver}' has no matching semver (expected {expected_prefix}*)")
+        else:
+            mapping_notes.append(f"Document version '{doc_ver}' maps to semver {matching_semver}")
+    
+    inventory["version_semantics"] = {
+        "semver_consistent": len(semver_versions) <= 1,
+        "doc_to_semver_mapping_valid": mapping_valid,
+        "mapping_notes": mapping_notes,
+        "mapping_rule": "Document version X.Y maps to code version X.Y.Z (semver)",
+    }
+    
+    # Overall consistency (strict: all semver must match)
+    is_consistent = len(semver_versions) <= 1 and mapping_valid
+    
     inventory["version_consistency"] = {
-        "is_consistent": len(base_versions) <= 1,
-        "base_versions": sorted(base_versions),
+        "is_consistent": is_consistent,
+        "semver_versions": sorted(semver_versions),
+        "doc_versions": sorted(doc_versions),
     }
     
     # Output

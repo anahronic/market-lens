@@ -1,8 +1,8 @@
 {
   "audit_metadata": {
-    "generated_utc": "2026-03-17T07:54:58Z",
-    "git_commit": "d473895d021c03ed244eb5ce8590e7ee9ad81f1d",
-    "duration_seconds": 0.001954
+    "generated_utc": "2026-03-17T08:39:27Z",
+    "git_commit": "190412cd8feb58297f6184c3896b663617a791d4",
+    "duration_seconds": 0.00913
   },
   "summary": {
     "total_checks": 22,
@@ -14,7 +14,7 @@
   "checks": {
     "artifact_registry_exists": {
       "status": "PASS",
-      "message": "/home/anahronic/market-lens/artifact_registry/Artifact_Registry_v0.6.json"
+      "message": "/home/anahronic/market-lens/artifacts/Artifact_Registry_v0.6.json"
     },
     "registry_field_protocol_version": {
       "status": "PASS",
@@ -96,12 +96,28 @@
       "status": "PASS",
       "message": "Present"
     },
-    "version_consistency": {
-      "status": "PASS",
-      "message": "All versions: 0.6.0"
+    "version_inventory": {
+      "code_protocol_versions": {
+        "engine/src/constants.py:PROTOCOL_VERSION": "0.6.0",
+        "artifacts/Artifact_Registry_v0.6.json:protocol_version": "0.6.0"
+      },
+      "code_constants_versions": {
+        "engine/src/constants.py:CONSTANTS_VERSION": "0.6.0",
+        "artifacts/Artifact_Registry_v0.6.json:constants_version": "0.6.0"
+      },
+      "doc_versions": {
+        "Protocols/DKP-PTL-REG-001.md:Version": "0.6"
+      },
+      "psl_versions": {
+        "service/version_info.py:PSL_VERSION": "PSL-2026-01-01"
+      },
+      "engine_versions": {
+        "service/version_info.py:ENGINE_VERSION": "0.6.0"
+      }
     },
-    "version_constants.PROTOCOL_VERSION": "0.6.0",
-    "version_constants.CONSTANTS_VERSION": "0.6.0",
-    "version_version_info.ENGINE_VERSION": "0.6.0"
+    "version_semantics": {
+      "status": "PASS",
+      "message": "All versions consistent: 0.6.0"
+    }
   }
 }

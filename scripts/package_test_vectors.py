@@ -125,8 +125,10 @@ Protocol Version: {manifest["protocol_version"]}
     with open(readme_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(readme_content)
     
-    # Create ZIP archive
-    zip_path = root / "official_test_vectors_v0.6.zip"
+    # Create ZIP archive in artifacts/
+    artifacts_dir = root / "artifacts"
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+    zip_path = artifacts_dir / "official_test_vectors_v0.6.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for file in output_dir.iterdir():
             zf.write(file, f"v0.6/{file.name}")
