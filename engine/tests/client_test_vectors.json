@@ -1,0 +1,785 @@
+[
+  {
+    "name": "core_strong_below",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 80.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "BELOW_MARKET",
+      "color": "#C9A227",
+      "ppi": -0.2,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "core_slight_below",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 90.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "SLIGHTLY_BELOW",
+      "color": "#E6C65C",
+      "ppi": -0.1,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "core_near",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 102.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.02,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "core_slight_above",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 110.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "SLIGHTLY_ABOVE",
+      "color": "#F39C12",
+      "ppi": 0.1,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "core_strong_above",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 130.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "ABOVE_MARKET",
+      "color": "#E74C3C",
+      "ppi": 0.3,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_neg_015",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 85.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "BELOW_MARKET",
+      "color": "#C9A227",
+      "ppi": -0.15,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_just_above_neg_015",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 85.0001,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "SLIGHTLY_BELOW",
+      "color": "#E6C65C",
+      "ppi": -0.149999,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_neg_005",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 95.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": -0.05,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_zero",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.0,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_pos_005",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 105.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.05,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_just_above_pos_005",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 105.0001,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "SLIGHTLY_ABOVE",
+      "color": "#F39C12",
+      "ppi": 0.050001,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "boundary_ppi_pos_015",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 115.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "ABOVE_MARKET",
+      "color": "#E74C3C",
+      "ppi": 0.15,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_cold_start_flag_true",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "COLD_START",
+      "cold_start_flag": true,
+      "insufficient_data_flag": true,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_pref_null",
+    "input": {
+      "P_ref": null,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": null,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_missing_p_offer",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_cs_below_base_threshold",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.149,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_cs_below_hardened_threshold",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.2,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "HARDENED",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_currency_mismatch",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "EUR",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_region_mismatch",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "EU"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_invalid_pref_zero",
+    "input": {
+      "P_ref": 0.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_invalid_cs_negative",
+    "input": {
+      "P_ref": 100.0,
+      "CS": -0.01,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "nodata_invalid_cs_gt_1",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 1.01,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NO_DATA",
+      "color": "#95A5A6",
+      "ppi": null,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "overlay_above_with_burst_detected",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "BURST_DETECTED",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 130.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "ABOVE_MARKET",
+      "color": "#E74C3C",
+      "ppi": 0.3,
+      "overlay": "warning_flag",
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "overlay_near_with_domain_dominance",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "DOMAIN_DOMINANCE",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.0,
+      "overlay": "dominance_flag",
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "overlay_slight_below_with_cluster_collapse",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "CLUSTER_COLLAPSE",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 90.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "SLIGHTLY_BELOW",
+      "color": "#E6C65C",
+      "ppi": -0.1,
+      "overlay": "clustering_warning",
+      "reduced_identity_scope": false
+    }
+  },
+  {
+    "name": "identity_scope_level_1_true",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 1,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.0,
+      "overlay": null,
+      "reduced_identity_scope": true
+    }
+  },
+  {
+    "name": "identity_scope_level_2_true",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 2,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.0,
+      "overlay": null,
+      "reduced_identity_scope": true
+    }
+  },
+  {
+    "name": "identity_scope_level_0_false",
+    "input": {
+      "P_ref": 100.0,
+      "CS": 0.8,
+      "N_eff": 5.0,
+      "MAD": 2.0,
+      "integrity_status": "NORMAL",
+      "cold_start_flag": false,
+      "insufficient_data_flag": false,
+      "identity_scope_level": 0,
+      "applied_profile": "BASE",
+      "protocol_version": "0.6.0",
+      "constants_version": "0.6.0",
+      "region": "US",
+      "currency": "USD",
+      "P_offer": 100.0,
+      "P_offer_currency": "USD",
+      "P_offer_region": "US"
+    },
+    "expected": {
+      "signal": "NEAR_MARKET",
+      "color": "#2ECC71",
+      "ppi": 0.0,
+      "overlay": null,
+      "reduced_identity_scope": false
+    }
+  }
+]

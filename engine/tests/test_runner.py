@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from engine.src.cli import run_engine
+from engine.tests.client_test_runner import run_all_client_tests
 
 VECTORS_DIR = Path(__file__).parent / "test_vectors"
 CURRENT_TIME_UTC = 1700000000  # Fixed deterministic time
@@ -129,6 +130,13 @@ def main():
                 failed += 1
         except Exception as e:
             print(f"  [ERROR] {tc['name']}: {e}")
+            failed += 1
+
+    if not generate:
+        print()
+        if run_all_client_tests():
+            passed += 1
+        else:
             failed += 1
 
     print()
