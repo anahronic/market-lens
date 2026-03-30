@@ -1,414 +1,159 @@
-# Market Lens
+# Market Lens Release Package
 
-**Deterministic Price Transparency Engine (DKP-PTL-REG v0.6 Reference Implementation)**
-
-> ⚠️ **Frozen v0.6.0. All specifications, constants, and test vectors are immutable. Any change requires a version bump to v0.7+ with full regeneration of test vectors and artifact registry.**
-
----
-
-## Project Description
-
-Market Lens is the canonical reference implementation of the DKP-PTL-REG v0.6 Pricing Transparency Registry Protocol. It provides a fully deterministic, evidence-bound engine for computing market reference prices from publicly observable price observations.
-
-The engine:
-- Validates and normalizes input observations per **REFERENCE-001 v0.6**
-- Executes the 18-step deterministic pipeline per **DATA-001 v0.6**
-- Applies atomic constant profiles (BASE / HARDENED) per **CONSTANTS-001 v0.6**
-- Computes integrity status per **THREAT-001 v0.6**
-- Emits versioned output per **GOV-001 v0.6**
-
-### Language Choice: Python
-
-Python was chosen for the reference implementation because:
-1. **IEEE 754 compliance**: Python `float` is IEEE 754 double precision by specification
-2. **Deterministic rounding**: Python's `round()` uses banker's rounding (round half to even) — exactly as required
-3. **No implicit locale**: Python string operations are locale-independent by default
-4. **Readability**: Reference implementations prioritize auditability over performance
-5. **Cross-platform**: Identical behavior across Linux, macOS, and Windows
+**Document ID:** ML-RELEASE-README-001  
+**Version:** 1.0  
+**Status:** Freeze  
+**Release:** v0.6.0  
+**Date:** 2026-03-31  
 
 ---
 
-## Architecture Summary
+## What This Package Is
 
-```
-Input JSON (observations)
-       │
-       ▼
-┌─────────────────────────┐
-│  REFERENCE-001          │  Input Boundary
-│  - NFC normalization    │
-│  - PSL domain extract   │
-│  - Timestamp canon.     │
-│  - Evidence hash (JCS)  │
-│  - Rejection filtering  │
-└────────┬────────────────┘
-         │
-         ▼
-┌─────────────────────────┐
-│  DATA-001 Pipeline      │  18 Deterministic Steps
-│  - Identity scope       │
-│  - Temporal validation  │
-│  - Burst detection      │
-│  - Domain cap           │
-│  - Weighted median      │
-│  - Similarity clusters  │
-│  - Outlier filtering    │
-│  - Confidence score     │
-└────────┬────────────────┘
-         │
-         ▼
-┌─────────────────────────┐
-│  THREAT-001             │  Integrity Status
-│  - COLD_START           │
-│  - BURST_DETECTED       │
-│  - DOMAIN_DOMINANCE     │
-│  - CLUSTER_COLLAPSE     │
-│  - NORMAL               │
-└────────┬────────────────┘
-         │
-         ▼
-┌─────────────────────────┐
-│  Output JSON            │  Versioned, Deterministic
-│  - P_ref, MAD, CS       │
-│  - N_eff                │
-│  - integrity_status     │
-│  - applied_profile      │
-│  - protocol_version     │
-│  - constants_version    │
-└─────────────────────────┘
-```
+This is the **release-ready bundle** for Market Lens v0.6.0 — a deterministic price observation and measurement platform. The package contains:
+
+- Normative protocol specifications
+- Legal documentation
+- PIL (Product Identity Linkage) extraction implementation
+- Conformance test suite
+- CI workflow for automated validation
 
 ---
 
-## Determinism Guarantees
+## What Is Included
 
-This engine guarantees:
+### Normative Documents (`specs/`)
 
-| Requirement | Implementation |
-|---|---|
-| IEEE 754 double precision | Python native `float` |
-| Round half to even | Python `round()` (banker's rounding) |
-| 6 decimal places for exposed metrics | Applied before output serialization |
-| Stable sorting | Python `list.sort()` is stable (Timsort) |
-| No randomness | No `random`, no `uuid`, no entropy sources |
-| No ML | No machine learning, no adaptive thresholds |
-| No network calls | Engine is fully offline |
-| No system locale | Unicode casefold, NFC normalization |
-| No system timezone | All times are UTC integer seconds |
-| No implicit recomputation | Step 11 recompute occurs exactly once |
-| No recursion | Linear pipeline execution |
-| Deterministic tie-breaking | Binary comparison of (domain_id, merchant_id, timestamp, price) |
+| Document | Version | Status |
+|----------|---------|--------|
+| DKP-PTL-REG-001 (Protocol) | 0.6 | Frozen |
+| DKP-PTL-REG-DATA-001 | 0.6 | Frozen |
+| DKP-PTL-REG-CONSTANTS-001 | 0.6 | Frozen |
+| DKP-PTL-REG-REFERENCE-001 | 0.6 | Frozen |
+| DKP-PTL-REG-THREAT-001 | 0.6 | Frozen |
+| DKP-PTL-REG-GOV-001 | 0.6 | Frozen |
+| DKP-PTL-REG-CLIENT-001 | 0.6 | Frozen |
+| DKP-PTL-REG-PIL-EXTRACTION-001 | 0.3 | Frozen |
+| DKP-PTL-REG-PIL-TEST-VECTORS-001 | 0.1 | Frozen |
 
-Given identical input and identical `current_time_utc`, the engine **MUST** produce byte-identical JSON output across all compliant environments.
+### Legal Documents (`docs/legal/`)
 
----
+| Document | ID | Version |
+|----------|----|---------|
+| Privacy Policy | ML-LEGAL-PRIVACY-001 | 1.0 |
+| Terms of Use | ML-LEGAL-TOU-001 | 1.0 |
+| Disclaimer | ML-LEGAL-DISCLAIMER-001 | 1.0 |
+| Data Dispute Policy | ML-LEGAL-DISPUTE-001 | 1.0 |
 
-## Version Coupling Rules
+### Release Documentation (`docs/`)
 
-Per **GOV-001 v0.6**:
+- Deterministic Release Report v0.6.0
+- Release Freeze Note v0.6.0
+- PIL to Reference Contract v0.6
+- PIL Extraction Alignment Report
 
-- `protocol_version` = `0.6.0`
-- `constants_version` = `0.6.0`
+### Artifacts (`artifacts/`)
 
-These are atomically coupled. Any modification to any constant requires:
-1. `protocol_version` increment
-2. `constants_version` increment
-3. Public changelog publication
-4. Regeneration of official test vectors
+- Artifact Registry v0.6.0 (SHA256 hashes)
+- Version Inventory v0.6.0
 
-No silent modification is permitted.
+### Implementation (`client/pil_extraction/`)
 
----
+Deterministic PIL extraction module:
+- `extractor.py` — Main extraction pipeline
+- `constants.py` — Canonical constants
+- `normalization.py` — Text normalization
+- `schemas.py` — Output schemas
+- `source_collectors.py` — Source precedence logic
+- `title_parser.py` — Title parsing
+- `url_tokens.py` — URL token extraction
+- `page_unit.py` — Page unit detection
+- `mappings.py` — Field mappings
 
-## CLI Usage
+### Tests (`tests/pil_extraction/`)
 
-### Basic Usage
+- `test_pil_vectors.py` — Official test vectors (20)
+- `test_contract.py` — Output contract validation
+- `test_artifacts.py` — Artifact hash validation
+- `test_regression.py` — Regression test suite
+- `test_runner_pil.py` — Standalone test runner
+- `vectors/pil_vectors_v0_1.json` — Test vector data
 
-```bash
-dkp-ptl-reg-engine run \
-  --input input.json \
-  --profile BASE \
-  --current_time_utc 1700000000
-```
+### CI (`.github/workflows/`)
 
-### Running as Python Module
-
-```bash
-python -m engine.src run \
-  --input input.json \
-  --profile BASE \
-  --current_time_utc 1700000000
-```
-
-### Parameters
-
-| Parameter | Required | Description |
-|---|---|---|
-| `--input` | Yes | Path to input JSON file containing observations |
-| `--profile` | Yes | Constants profile: `BASE` or `HARDENED` |
-| `--current_time_utc` | Yes | Current time as Unix epoch seconds (UTC). Engine never reads system clock implicitly. |
+- `pil-conformance.yml` — Conformance gate workflow
 
 ---
 
-## Service Mode
+## What Is NOT Included
 
-Market Lens can also run as an HTTP API service with background worker processing.
-
-### Run API Locally
-
-```bash
-pip install -e ".[dev]"
-uvicorn api.main:app --host 0.0.0.0 --port 8000
-```
-
-### Run Worker Locally
-
-```bash
-python -m worker.main
-```
-
-### Environment Variables
-
-| Variable | Default | Description |
-|---|---|---|
-| `MARKET_LENS_PROFILE` | `BASE` | Default profile (BASE or HARDENED) |
-| `MARKET_LENS_QUEUE_DIR` | `./var/queue` | Queue directory path |
-| `MARKET_LENS_POLL_INTERVAL` | `5` | Worker poll interval (seconds) |
-| `MARKET_LENS_SERVICE_MODE` | `local` | Service mode identifier |
-
-### API Endpoints
-
-| Endpoint | Method | Description |
-|---|---|---|
-| `/health` | GET | Health check with version info |
-| `/version` | GET | Detailed version information |
-| `/v1/evaluate` | POST | Evaluate observations (synchronous) |
-| `/v1/ingest` | POST | Queue observations for background processing |
-
-### Example Evaluate Request
-
-```bash
-curl -X POST http://localhost:8000/v1/evaluate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "observations": [{
-      "source_url": "https://shop.example.com/product/1",
-      "merchant_id": "merchant",
-      "price": 100.0,
-      "currency": "usd",
-      "region": "us",
-      "timestamp": 1699900000,
-      "product_identity_layer": {
-        "brand": "Brand", "model": "Model", "sku": "SKU",
-        "condition": "new", "bundle_flag": "", "warranty_type": "",
-        "region_variant": "", "storage_or_size": "", "release_year": "2025"
-      }
-    }],
-    "current_time_utc": 1700000000,
-    "applied_profile": "BASE"
-  }'
-```
-
-### Queue Directory Layout
-
-```
-var/queue/
-├── pending/      # Jobs awaiting processing
-├── processing/   # Jobs currently being processed
-├── completed/    # Successfully completed jobs
-└── failed/       # Jobs that failed validation
-```
+- Raw observation data
+- Production database content
+- Other services (API, worker, ingestion)
+- Development tooling
+- Editor/IDE configuration
+- Cache directories (`__pycache__`, `.pytest_cache`)
+- Version control history (`.git`)
 
 ---
 
-### Input JSON Format
+## Where to Find Things
 
-```json
-{
-  "observations": [
-    {
-      "source_url": "https://shop.example.com/product/123",
-      "merchant_id": "example_merchant",
-      "price": 99.99,
-      "currency": "usd",
-      "region": "us",
-      "timestamp": 1699900000,
-      "product_identity_layer": {
-        "brand": "BrandName",
-        "model": "ModelX",
-        "sku": "SKU001",
-        "condition": "new",
-        "bundle_flag": "false",
-        "warranty_type": "standard",
-        "region_variant": "",
-        "storage_or_size": "256gb",
-        "release_year": "2025"
-      }
-    }
-  ]
-}
-```
-
-### Output JSON Format
-
-```json
-{
-  "applied_profile": "BASE",
-  "protocol_version": "0.6.0",
-  "constants_version": "0.6.0",
-  "identity_scope_level": 0,
-  "P_ref": 100.0,
-  "MAD": 1.5,
-  "CS": 0.482351,
-  "N_eff": 4.876543,
-  "cold_start_flag": false,
-  "insufficient_data_flag": false,
-  "integrity_status": "NORMAL"
-}
-```
+| Content | Location |
+|---------|----------|
+| Protocol specifications | `specs/` |
+| Legal documents | `docs/legal/` |
+| Release reports | `docs/` |
+| Artifact hashes | `artifacts/` |
+| PIL implementation | `client/pil_extraction/` |
+| Conformance tests | `tests/pil_extraction/` |
+| CI workflow | `.github/workflows/` |
 
 ---
 
-## Reproducibility Instructions
+## Running Conformance Tests
 
 ### Prerequisites
 
-- Python >= 3.10
-- No external dependencies required (stdlib only)
+```bash
+pip install pytest beautifulsoup4 lxml
+```
 
-### Setup
+### Run All Tests
 
 ```bash
-git clone https://github.com/anahronic/market-lens.git
-cd market-lens
-pip install -e .
+pytest tests/pil_extraction/ -v
 ```
 
-### Verify Test Vectors (byte-for-byte)
+### Run Official Test Vectors Only
 
 ```bash
-# Compare engine output against committed expected.json files
-python -m engine.tests.test_runner
-
-# Run full pytest suite
-pytest engine/tests/ -v
+python tests/pil_extraction/test_runner_pil.py
 ```
 
-### Verify Determinism
+### Validate Artifact Hashes
 
 ```bash
-# Run each test vector twice and compare in-memory (no file writes)
-python scripts/det_check.py
-```
-
-### Verify PSL Snapshot
-
-```bash
-sha256sum engine/src/psl_snapshot/PSL-2026-01-01.dat
-```
-
-Expected SHA256: `edee63489085821c1744bbc9225bb1ff9edd34f8451f1379273e124ebf5083cf`
-
-This must match the value recorded in `artifact_registry/Artifact_Registry_v0.6.json`.
-
----
-
-## PSL Snapshot
-
-| Property | Value |
-|---|---|
-| Filename | `PSL-2026-01-01.dat` |
-| Location | `engine/src/psl_snapshot/` |
-| Version | PSL-2026-01-01 |
-| SHA256 | `edee63489085821c1744bbc9225bb1ff9edd34f8451f1379273e124ebf5083cf` |
-
-The PSL snapshot is version-pinned per **REFERENCE-001 v0.6** and must not be modified without a version increment.
-
----
-
-## Test Vectors
-
-Six mandatory deterministic test vectors are included:
-
-| Test Vector | Scenario | Key Assertions |
-|---|---|---|
-| `uniform_market` | 5 domains, similar prices | Stable P_ref, NORMAL status |
-| `burst_attack` | One domain floods observations | BURST_DETECTED, weight suppression |
-| `domain_dominance` | One domain > 30% weight | DOMAIN_DOMINANCE, cap enforcement |
-| `cluster_injection` | Near-duplicate Sybil injection | Cluster penalty, similarity discount |
-| `cold_start` | Single observation only | COLD_START, P_ref=null, CS=0 |
-| `zero_mad` | All identical prices | MAD=0, no outlier exclusion |
-
----
-
-## Repository Structure
-
-```
-market-lens/
-├── README.md
-├── LICENSE
-├── pyproject.toml
-├── .gitignore
-├── RELEASE_CHECKLIST_v0.6.0.md
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── engine/
-│   ├── __init__.py
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── __main__.py
-│   │   ├── cli.py
-│   │   ├── constants.py
-│   │   ├── data_pipeline.py
-│   │   ├── json_canonical.py
-│   │   ├── reference_boundary.py
-│   │   ├── threat_status.py
-│   │   └── psl_snapshot/
-│   │       └── PSL-2026-01-01.dat
-│   └── tests/
-│       ├── __init__.py
-│       ├── test_engine.py
-│       ├── test_runner.py
-│       └── test_vectors/
-│           ├── *_input.json
-│           └── *_expected.json
-├── Protocols/
-│   ├── DKP-PTL-REG-001.md
-│   ├── DKP-PTL-REG-DATA-001.md
-│   ├── DKP-PTL-REG-CONSTANTS-001_.md
-│   ├── DKP-PTL-REG-REFERENCE-001.md
-│   ├── DKP-PTL-REG-THREAT-001.md
-│   ├── DKP-PTL-REG-GOV-001.md
-│   └── DKP-PTL-REG Implementation Roadmap.md
-├── artifact_registry/
-│   └── Artifact_Registry_v0.6.json
-└── scripts/
-    ├── det_check.py
-    ├── generate_artifact_registry.py
-    ├── dump_expected.py
-    ├── show_expected.py
-    ├── init_git.sh
-    └── setup_repo.sh
+pytest tests/pil_extraction/test_artifacts.py -v
 ```
 
 ---
 
-## Specification Alignment
+## Deterministic Guarantee
 
-This implementation is aligned with the following frozen specifications:
+This package is **deterministic and version-bound**:
 
-| Document | Version | Status |
-|---|---|---|
-| DKP-PTL-REG-001 | v0.6 | Frozen |
-| DKP-PTL-REG-DATA-001 | v0.6 | Frozen |
-| DKP-PTL-REG-CONSTANTS-001 | v0.6 | Frozen |
-| DKP-PTL-REG-REFERENCE-001 | v0.6 | Frozen |
-| DKP-PTL-REG-THREAT-001 | v0.6 | Frozen |
-| DKP-PTL-REG-GOV-001 | v0.6 | Frozen |
+- Normative logic is frozen in included specifications
+- All outputs are reproducible given identical inputs
+- Changes require version increment per GOV-001 governance
+- Historical versions remain immutable
 
 ---
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+MIT License. See `LICENSE` file.
+
+---
+
+*End of Document*

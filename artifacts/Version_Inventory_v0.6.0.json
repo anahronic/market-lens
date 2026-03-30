@@ -1,0 +1,72 @@
+{
+  "release_version": "0.6.0",
+  "protocol_version": "0.6.0",
+  "constants_version": "0.6.0",
+  "pil_extraction_version": "0.3",
+  "pil_vectors_version": "0.1",
+  "client_version": "0.3",
+  "created_at": "2026-03-31",
+  "documents": [
+    {
+      "id": "DKP-PTL-REG-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-001.md",
+      "description": "Main protocol specification"
+    },
+    {
+      "id": "DKP-PTL-REG-DATA-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-DATA-001.md",
+      "description": "Data layer specification"
+    },
+    {
+      "id": "DKP-PTL-REG-CONSTANTS-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-CONSTANTS-001.md",
+      "description": "Constants profile specification"
+    },
+    {
+      "id": "DKP-PTL-REG-REFERENCE-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-REFERENCE-001.md",
+      "description": "Reference layer specification"
+    },
+    {
+      "id": "DKP-PTL-REG-THREAT-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-THREAT-001.md",
+      "description": "Threat model specification"
+    },
+    {
+      "id": "DKP-PTL-REG-GOV-001",
+      "version": "0.6",
+      "path": "specs/DKP-PTL-REG-GOV-001.md",
+      "description": "Governance specification"
+    },
+    {
+      "id": "DKP-PTL-REG-CLIENT-001",
+      "version": "0.3",
+      "path": "specs/DKP-PTL-REG-CLIENT-001.md",
+      "description": "Client implementation specification"
+    },
+    {
+      "id": "DKP-PTL-REG-PIL-EXTRACTION-001",
+      "version": "0.3",
+      "path": "specs/DKP-PTL-REG-PIL-EXTRACTION-001.md",
+      "description": "PIL extraction specification"
+    },
+    {
+      "id": "DKP-PTL-REG-PIL-TEST-VECTORS-001",
+      "version": "0.1",
+      "path": "specs/DKP-PTL-REG-PIL-TEST-VECTORS-001.md",
+      "description": "PIL test vectors specification"
+    }
+  ],
+  "version_binding": {
+    "protocol_to_constants": "atomic",
+    "pil_to_protocol": "compatible",
+    "vectors_to_pil": "locked",
+    "note": "Constants cannot change independently of protocol version per CONSTANTS-001"
+  },
+  "artifact_registry": "artifacts/Artifact_Registry_v0.6.0.json"
+}

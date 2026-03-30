@@ -1,0 +1,87 @@
+name: PIL Extraction Conformance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'client/pil_extraction/**'
+      - 'tests/pil_extraction/**'
+      - 'artifacts/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'client/pil_extraction/**'
+      - 'tests/pil_extraction/**'
+      - 'artifacts/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  pil-conformance:
+    name: PIL Conformance Tests (v0.6.0)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest beautifulsoup4 lxml
+          pip install -e .
+
+      - name: Deterministic Conformance Gate
+        run: |
+          echo "================================================"
+          echo "Deterministic Conformance: REQUIRED"
+          echo "================================================"
+          echo "Version: 0.6.0"
+          echo "All tests must pass for merge approval."
+          echo "================================================"
+
+      - name: Run PIL test runner (20 vectors)
+        run: |
+          PYTHONPATH=. python tests/pil_extraction/test_runner_pil.py
+          # Runner validates exactly 20 vectors and exits non-zero on failure
+
+      - name: Run full PIL test suite
+        run: |
+          PYTHONPATH=. pytest tests/pil_extraction -v --tb=short
+          # Includes: vectors, regression, contract, artifacts
+
+      - name: Validate artifact hashes
+        run: |
+          PYTHONPATH=. pytest tests/pil_extraction/test_artifacts.py -v --tb=short
+          # Any hash mismatch = hard failure
+
+      - name: Verify vector count lock
+        run: |
+          VECTOR_COUNT=$(python -c "import json; print(len(json.load(open('tests/pil_extraction/vectors/pil_vectors_v0_1.json'))))")
+          echo "Vector count: $VECTOR_COUNT"
+          if [ "$VECTOR_COUNT" -ne 20 ]; then
+            echo "ERROR: Expected exactly 20 test vectors, found $VECTOR_COUNT"
+            exit 1
+          fi
+          echo "PASS: 20/20 vectors present"
+
+      - name: Conformance Report
+        if: always()
+        run: |
+          echo "================================================"
+          echo "PIL Extraction Conformance Report"
+          echo "================================================"
+          echo "Registry Version: 0.6.0"
+          echo "PIL Extraction Spec: DKP-PTL-REG-PIL-EXTRACTION-001 v0.3"
+          echo "Test Vectors: DKP-PTL-REG-PIL-TEST-VECTORS-001 v0.1"
+          echo "Contract: DKP-PTL-REG-PIL-TO-REFERENCE-001 v0.6"
+          echo "Python: ${{ matrix.python-version }}"
+          echo "================================================"
+          echo "Deterministic Conformance: ENFORCED"
+          echo "================================================"

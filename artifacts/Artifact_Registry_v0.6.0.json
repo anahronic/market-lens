@@ -1,0 +1,159 @@
+{
+  "version": "0.6.0",
+  "pil_extraction_version": "0.3",
+  "pil_vectors_version": "0.1",
+  "protocol_version": "0.6.0",
+  "created_at": "2026-03-31",
+  "artifacts": [
+    {
+      "name": "pil_conformance_workflow",
+      "path": ".github/workflows/pil-conformance.yml",
+      "sha256": "80bda07b160f95e1f94718754dd0de646b254330b57f09d5bf71f7083879c215"
+    },
+    {
+      "name": "pil___init__",
+      "path": "client/pil_extraction/__init__.py",
+      "sha256": "8db83794cd8742952214a72e1fd02c201d68cacc67e76c6e4fce21f38b25c1f4"
+    },
+    {
+      "name": "pil_constants",
+      "path": "client/pil_extraction/constants.py",
+      "sha256": "a2c6cc8940eefc5e8043bc56e6f6eb58a4e2f8fe127dcb06eacf500598db0f7b"
+    },
+    {
+      "name": "pil_extractor",
+      "path": "client/pil_extraction/extractor.py",
+      "sha256": "61c12e7d3603dc8f674acf039d94bd94ca488f94b43cd3ac5bcae5f14d929231"
+    },
+    {
+      "name": "pil_mappings",
+      "path": "client/pil_extraction/mappings.py",
+      "sha256": "cb2e543ea5c1ac0647cbf711f3d39a336e6119e72c1cf33beb09e6ce255b71e3"
+    },
+    {
+      "name": "pil_normalization",
+      "path": "client/pil_extraction/normalization.py",
+      "sha256": "55e5ad1084f86f82bc84847cf620305f46a79f866aa5cfc1e1fd87acf3c74be1"
+    },
+    {
+      "name": "pil_page_unit",
+      "path": "client/pil_extraction/page_unit.py",
+      "sha256": "a5371a43a29c393a3e794ea4bb4c5ffb992a3e433a57f707c91f2fc70c115b5f"
+    },
+    {
+      "name": "pil_schemas",
+      "path": "client/pil_extraction/schemas.py",
+      "sha256": "311992ca38e38f45f6e64bbdb766a6c49edcc1f8f5322a790e7ecef81d2a89a8"
+    },
+    {
+      "name": "pil_source_collectors",
+      "path": "client/pil_extraction/source_collectors.py",
+      "sha256": "4c624d906ed7df20c713f1e0b4d9202abfa75dbadf8ad0d9bc42e0dc093e6f09"
+    },
+    {
+      "name": "pil_title_parser",
+      "path": "client/pil_extraction/title_parser.py",
+      "sha256": "b9be4241c9e93b8a17a78d3241305af306df9b816855f9b25e35972369080e60"
+    },
+    {
+      "name": "pil_url_tokens",
+      "path": "client/pil_extraction/url_tokens.py",
+      "sha256": "ef689016baf59b03a297e8a06be072cec3f269b93a70c301ef8ebf5be3f83425"
+    },
+    {
+      "name": "deterministic_release_report_v0_6_0",
+      "path": "docs/Deterministic_Release_Report_v0.6.0.md",
+      "sha256": "ab81f0e4d20da393c75eb86573a7a587e6fd8c9ed509427807b205062506536f"
+    },
+    {
+      "name": "pil_extraction_alignment_report",
+      "path": "docs/PIL_EXTRACTION_ALIGNMENT_REPORT.md",
+      "sha256": "4448d50234e20048defb30ebf0efd79b4509ad794090a417c638d0463f6a070a"
+    },
+    {
+      "name": "pil_to_reference_contract_v0_6",
+      "path": "docs/PIL_TO_REFERENCE_CONTRACT_v0.6.md",
+      "sha256": "b9ddeac4b87da8905a33f506144577d38d203af0845cab007bb718fdcdf627d3"
+    },
+    {
+      "name": "release_freeze_note_v0_6_0",
+      "path": "docs/RELEASE_FREEZE_NOTE_v0.6.0.md",
+      "sha256": "a7b964519806c57d2a7149045a6fd8837d3e59799a3125fec63dad110213cd0d"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_001",
+      "path": "specs/DKP-PTL-REG-001.md",
+      "sha256": "72b8737839afe781fc930d4db87741f5218eaafa70f18090f1a7794c946c958f"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_client_001",
+      "path": "specs/DKP-PTL-REG-CLIENT-001.md",
+      "sha256": "6e22e8c24a7c0a8f6e132f5bb3858845ca4953804452a7860877b5f78d44b191"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_constants_001",
+      "path": "specs/DKP-PTL-REG-CONSTANTS-001.md",
+      "sha256": "22467ecb7520ffd8ab0b607fb24fd7bc0f0c3bdff5a1d78f7223863a22ea1430"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_data_001",
+      "path": "specs/DKP-PTL-REG-DATA-001.md",
+      "sha256": "453cb94e162b010ba3d41f0d733928462d7ecc7d1ba01b2a677622c00c5df0ac"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_gov_001",
+      "path": "specs/DKP-PTL-REG-GOV-001.md",
+      "sha256": "5ee22c84dd45002a918f98cc3e262097cdab49517cf9b61011bc092d7d1a6684"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_pil_extraction_001",
+      "path": "specs/DKP-PTL-REG-PIL-EXTRACTION-001.md",
+      "sha256": "32142ae6a19716f97ba14c3027cc5e4e8808bd83d1832636bf6594ab39cf57fb"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_pil_test_vectors_001",
+      "path": "specs/DKP-PTL-REG-PIL-TEST-VECTORS-001.md",
+      "sha256": "ce7b214c883971fe8977ad1afeec60fc3e19a016f921686a001a29b51754eeb3"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_reference_001",
+      "path": "specs/DKP-PTL-REG-REFERENCE-001.md",
+      "sha256": "a48ee9d0890342d6b782810c20456f3f83eb33bf5e4a81b91ebaf014f9bb15c8"
+    },
+    {
+      "name": "spec_dkp_ptl_reg_threat_001",
+      "path": "specs/DKP-PTL-REG-THREAT-001.md",
+      "sha256": "f83360f10fbee43157cd9f6035bf1c7fa925b93732c86f921e8c1c33227f40e9"
+    },
+    {
+      "name": "test_artifacts",
+      "path": "tests/pil_extraction/test_artifacts.py",
+      "sha256": "7354d604a274c9e3f480dbfca4742738822976f3cde1b6f0e475a20edaa634e1"
+    },
+    {
+      "name": "test_contract",
+      "path": "tests/pil_extraction/test_contract.py",
+      "sha256": "83cac8cd6946144810d6eb4d4bd461b53f0672815f190c04a91f7fe2d8b97116"
+    },
+    {
+      "name": "test_pil_vectors",
+      "path": "tests/pil_extraction/test_pil_vectors.py",
+      "sha256": "a9b33d353e838d8a7762554b5cc7564308789b03ba057e69897f100b9df6e86a"
+    },
+    {
+      "name": "test_regression",
+      "path": "tests/pil_extraction/test_regression.py",
+      "sha256": "1b7ae5921b01237c5dc41b40e13ab20321c15216195a477076bdfb2425289261"
+    },
+    {
+      "name": "test_runner_pil",
+      "path": "tests/pil_extraction/test_runner_pil.py",
+      "sha256": "c2bcdd79133260f7e13cc4fb0ac3ba80913c281e6d75aa8f6a478c843381fc8e"
+    },
+    {
+      "name": "pil_vectors",
+      "path": "tests/pil_extraction/vectors/pil_vectors_v0_1.json",
+      "sha256": "59e5ea9c1c990e072488a309fe9742e2021b3dd1689d900ce8fc46aafdedf342"
+    }
+  ]
+}

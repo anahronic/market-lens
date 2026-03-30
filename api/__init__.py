@@ -1,1 +1,0 @@
-"""Market Lens API module."""
