@@ -1,0 +1,72 @@
+{
+  "release_version": "0.6.0",
+  "protocol_version": "0.6.0",
+  "constants_version": "0.6.0",
+  "pil_extraction_version": "0.3",
+  "pil_vectors_version": "0.1",
+  "created_at": "2026-03-31",
+  "build_environment": {
+    "os": "Linux",
+    "os_version": "6.6.87.2-microsoft-standard-WSL2",
+    "python_version": "3.10.12",
+    "architecture": "x86_64",
+    "dependencies": {
+      "beautifulsoup4": "4.10.0",
+      "lxml": "4.8.0",
+      "pytest": "8.3.4"
+    }
+  },
+  "normative_documents": [
+    {
+      "id": "DKP-PTL-REG-001",
+      "version": "0.6",
+      "type": "protocol"
+    },
+    {
+      "id": "DKP-PTL-REG-DATA-001",
+      "version": "0.6",
+      "type": "data"
+    },
+    {
+      "id": "DKP-PTL-REG-CONSTANTS-001",
+      "version": "0.6",
+      "type": "constants"
+    },
+    {
+      "id": "DKP-PTL-REG-REFERENCE-001",
+      "version": "0.6",
+      "type": "reference"
+    },
+    {
+      "id": "DKP-PTL-REG-THREAT-001",
+      "version": "0.6",
+      "type": "threat"
+    },
+    {
+      "id": "DKP-PTL-REG-GOV-001",
+      "version": "0.6",
+      "type": "governance"
+    },
+    {
+      "id": "DKP-PTL-REG-CLIENT-001",
+      "version": "0.3",
+      "type": "client"
+    },
+    {
+      "id": "DKP-PTL-REG-PIL-EXTRACTION-001",
+      "version": "0.3",
+      "type": "pil_extraction"
+    },
+    {
+      "id": "DKP-PTL-REG-PIL-TEST-VECTORS-001",
+      "version": "0.1",
+      "type": "test_vectors"
+    }
+  ],
+  "validation": {
+    "test_vectors_count": 20,
+    "test_suite_count": 79,
+    "determinism_verified": true,
+    "artifact_hashes_verified": true
+  }
+}

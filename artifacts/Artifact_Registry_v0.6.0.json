@@ -11,6 +11,11 @@
       "sha256": "80bda07b160f95e1f94718754dd0de646b254330b57f09d5bf71f7083879c215"
     },
     {
+      "name": "version_manifest_v0_6_0",
+      "path": "artifacts/version_manifest_v0.6.0.json",
+      "sha256": "64dfc211d5a33b13b083bc59a45163aeb1edf7daa334ddd85b4dfce9f03b6a0a"
+    },
+    {
       "name": "pil___init__",
       "path": "client/pil_extraction/__init__.py",
       "sha256": "8db83794cd8742952214a72e1fd02c201d68cacc67e76c6e4fce21f38b25c1f4"
@@ -79,6 +84,16 @@
       "name": "release_freeze_note_v0_6_0",
       "path": "docs/RELEASE_FREEZE_NOTE_v0.6.0.md",
       "sha256": "a7b964519806c57d2a7149045a6fd8837d3e59799a3125fec63dad110213cd0d"
+    },
+    {
+      "name": "release_v0_6_0",
+      "path": "docs/RELEASE_v0.6.0.md",
+      "sha256": "c5dd8bdebb8dfd072062d28bf49620bf44bc8a9fbca24dc56b773afb27d8eb23"
+    },
+    {
+      "name": "reproduce_release_script",
+      "path": "scripts/reproduce_release.sh",
+      "sha256": "4640bb083ba517afd43af212bfcf3a8f9a2c446cf724f412cb6264bf6c1c3c07"
     },
     {
       "name": "spec_dkp_ptl_reg_001",
