@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Lens</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Market Lens</h1>
+      <span class="version">v0.6.0</span>
+    </header>
+    
+    <main>
+      <button id="capture-btn" class="capture-button">
+        Capture Price
+      </button>
+      
+      <div id="status" class="status hidden">
+        <span id="status-icon" class="status-icon"></span>
+        <span id="status-text" class="status-text"></span>
+      </div>
+      
+      <div id="details" class="details hidden">
+        <div class="detail-row">
+          <span class="label">Brand:</span>
+          <span id="detail-brand" class="value">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Model:</span>
+          <span id="detail-model" class="value">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Price:</span>
+          <span id="detail-price" class="value">-</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">SKU:</span>
+          <span id="detail-sku" class="value">-</span>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <span class="protocol">DKP-PTL-REG v0.6</span>
+    </footer>
+  </div>
+  
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
