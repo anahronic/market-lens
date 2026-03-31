@@ -1,21 +1,101 @@
-MIT License
+Market Lens Non-Commercial Source License v1.0
 
-Copyright (c) 2026 anahronic
+Copyright (c) 2026 Igor Opolinsky
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+TERMS AND CONDITIONS
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. DEFINITIONS
+
+"Software" means the Market Lens source code, documentation, specifications,
+and associated files distributed under this license.
+
+"Commercial Use" means any use intended for or directed toward commercial
+advantage or monetary compensation, including but not limited to:
+  - Paid services or products
+  - Software-as-a-Service (SaaS) offerings
+  - Subscription-based products or platforms
+  - Internal business systems used for commercial operations
+  - Consulting deliverables where this Software is embedded as a
+    material component
+  - Resale, white-label, or monetized platform usage
+  - Any use within a for-profit organization's revenue-generating activities
+
+"Non-Commercial Use" means use that is not Commercial Use, including but
+not limited to:
+  - Personal projects
+  - Academic research and education
+  - Scientific validation and reproducibility verification
+  - Security auditing
+  - Learning and skill development
+  - Non-commercial prototypes and proof-of-concept work
+  - Non-profit organizational use where no revenue is generated
+
+2. GRANT OF RIGHTS
+
+Subject to the terms and conditions of this License, you are hereby granted
+a non-exclusive, worldwide, royalty-free license to:
+
+  a) Use, copy, and run the Software for Non-Commercial Use
+  b) Study, analyze, and learn from the Software
+  c) Modify the Software for Non-Commercial Use
+  d) Distribute the Software and derivative works for Non-Commercial Use
+
+3. CONDITIONS
+
+Your exercise of the rights granted above is subject to the following
+conditions:
+
+  a) ATTRIBUTION: You must give appropriate credit to Igor Opolinsky,
+     provide a reference to this license, and indicate if changes were
+     made. You may do so in any reasonable manner, but not in any way
+     that suggests the author endorses you or your use.
+
+  b) DERIVATIVE WORKS NOTICE: If you modify the Software and distribute
+     the modified version, you must include a clear and prominent notice
+     stating that changes were made from the original.
+
+  c) SHARE-ALIKE: If you distribute derivative works publicly, you must
+     distribute them under the same license terms as this License. You may
+     not impose additional restrictions on recipients' exercise of the
+     rights granted herein for Non-Commercial Use.
+
+  d) NO COMMERCIAL USE: You may not use the Software for Commercial Use
+     without prior written permission from the author.
+
+4. COMMERCIAL LICENSING
+
+Commercial Use of this Software requires a separate written agreement with
+the author. To inquire about commercial licensing, contact:
+
+  Igor Opolinsky
+  licensing-contact@example.com
+
+5. DISCLAIMER OF WARRANTY
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+6. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER
+RESULTING FROM LOSS OF USE, DATA, OR PROFITS, WHETHER OR NOT ADVISED OF
+THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF LIABILITY, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+7. TERMINATION
+
+This License and the rights granted hereunder will terminate automatically
+if you fail to comply with the terms herein. Upon termination, you must
+cease all use and distribution of the Software.
+
+---
+
+Commercial licensing inquiries:
+Igor Opolinsky
+licensing-contact@example.com

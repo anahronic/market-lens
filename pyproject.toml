@@ -7,10 +7,10 @@ name = "market-lens"
 version = "0.6.0"
 description = "Market Lens — Deterministic Price Transparency Protocol (DKP-PTL-REG v0.6 Reference Implementation)"
 readme = "README.md"
-license = {text = "MIT"}
+license = {text = "Market Lens Non-Commercial Source License v1.0"}
 requires-python = ">=3.10"
 authors = [
-    {name = "anahronic"}
+    {name = "Igor Opolinsky"}
 ]
 dependencies = [
     "beautifulsoup4>=4.12.0",

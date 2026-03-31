@@ -152,7 +152,19 @@ This package is **deterministic and version-bound**:
 
 ## License
 
-MIT License. See `LICENSE` file.
+This repository is **source-available** under the Market Lens Non-Commercial Source License v1.0.
+
+**Permitted without permission:**
+- Inspection, study, and learning
+- Personal and academic use
+- Research and reproducibility verification
+- Non-commercial prototypes
+
+**Requires written permission:**
+- Commercial use of any kind
+
+See [LICENSE](LICENSE) for complete terms.  
+See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for commercial licensing information.
 
 ---
 
