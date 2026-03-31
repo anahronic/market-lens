@@ -61,6 +61,14 @@ Compliance with protocol integrity expectations does not override or replace lic
 
 ---
 
+## Misrepresentation Prohibition
+
+It is prohibited to present modified, partially compliant, or behaviorally divergent implementations as equivalent to the official Market Lens system.
+
+Any claim of equivalence, compatibility, compliance parity, or result parity must be demonstrably supported by passing the official conformance tests without modification.
+
+---
+
 ## Contact
 
 For questions about official implementation status or authorization:
