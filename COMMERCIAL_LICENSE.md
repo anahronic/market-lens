@@ -4,6 +4,8 @@ This repository is publicly available for inspection, verification, reproducibil
 
 **Public availability does not grant commercial usage rights.**
 
+Public availability does not grant rights to deploy, host, operate, resell, or embed the Software commercially. Use of the "Market Lens" name or branding for commercial offerings also requires explicit written permission.
+
 ---
 
 ## What Is Allowed Without Permission

@@ -162,9 +162,14 @@ This repository is **source-available** under the Market Lens Non-Commercial Sou
 
 **Requires written permission:**
 - Commercial use of any kind
+- Use of "Market Lens" branding for commercial offerings
+- Claiming official implementation status
+
+**Modified forks** must clearly indicate they are not the official implementation.
 
 See [LICENSE](LICENSE) for complete terms.  
-See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for commercial licensing information.
+See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for commercial licensing information.  
+See [PROTOCOL_COMPLIANCE.md](PROTOCOL_COMPLIANCE.md) for official implementation policy.
 
 ---
 
